@@ -6,6 +6,9 @@ if ($projectDir -eq ".\code.cpp") {
     $exeFile = ".\code.exe"
     $cppFile = Resolve-Path -Path $projectDir
     if (!(Test-Path $exeFile) -or ((Get-Item $cppFile).LastWriteTime -gt (Get-Item $exeFile).LastWriteTime)) {
+        if (Test-Path $exeFile) {
+            Invoke-Expression "rm $exeFile"
+        }
         Write-Host "Compiling $cppFile"
         g++ $cppFile -o $exeFile -std=c++20
     }
@@ -36,7 +39,14 @@ if ($projectDir -eq ".\code.cpp") {
         $compileCmd = "g++ " + $allFiles + "-o " + $exeFile + " -std=c++20"
         Write-Host "Compiling $projectDir"
         write-host $compileCmd
+        if (Test-Path $exeFile) {
+            Invoke-Expression "rm $exeFile"
+        }
         Invoke-Expression $compileCmd
+    }
+    if (!(Test-Path $exeFile)) {
+        Write-Host "Compilation failed. $exeFile not found."
+        return
     }
     Write-Host "Running $exeFile"
     Invoke-Expression $exeFile
