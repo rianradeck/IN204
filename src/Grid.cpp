@@ -64,27 +64,20 @@ void Grid::placePiece(Piece piece) {
     }
 }
 
-void Grid::loadGrid() {
-    for(Piece piece : pieces) {
-        placePiece(piece);
+void Grid::clearGrid(){
+    for (int i = 0;i < 22 * 10; i++) {
+        cells[i] = 0;
     }
 }
 
-void Grid::update(std::vector<sf::Event> userInput) {
-    for (auto event : userInput) {
-        if (event.type == sf::Event::KeyPressed) {
-            switch (event.key.code) {
-                case sf::Keyboard::Left:
-                    currentPiece.move(Direction::LEFT);
-                case sf::Keyboard::Right:
-                    currentPiece.move(Direction::RIGHT);
-                case sf::Keyboard::Down:
-                    currentPiece.move(Direction::DOWN);
-                case sf::Keyboard::Up:
-                    break;
-            }
-        }
+void Grid::loadGrid(Piece &currentPiece) {
+    for(Piece piece : staticPieces) {
+        placePiece(piece);
     }
+    placePiece(currentPiece);
+}
 
-
+void Grid::update(Piece &currentPiece) {
+    clearGrid();
+    loadGrid(currentPiece);
 }

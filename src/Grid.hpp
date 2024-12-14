@@ -8,12 +8,11 @@ class Grid {
 private:
     int width, height;
     std::vector<int> cells;
-    std::vector<Piece> pieces; // Should this be in the game class?
-    Piece currentPiece; // same
+    std::vector<Piece> staticPieces;
 
 public:
-    Grid(int width, int height, std::vector<int> cells) : width(width), height(height), cells(cells) {};
-    Grid(int width, int height) : width(width), height(height) {
+    Grid(int width, int height, std::vector<int> cells) : width(width), height(height), cells(cells), staticPieces({}) {};
+    Grid(int width, int height) : width(width), height(height), staticPieces({}) {
         cells = std::vector<int>(width * height);
         for (int i = 0; i < width * height; i++) {
             cells[i] = 0;
@@ -25,7 +24,8 @@ public:
     int get(int x, int y);
     void print();
     void render(WindowManager &windowManager);
-    void update(std::vector<sf::Event> userInput);
-    void loadGrid();
+    void clearGrid();
+    void loadGrid(Piece &currentPiece);
+    void update(Piece &currentPiece);
     void placePiece(Piece piece);
 };
