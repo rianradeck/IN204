@@ -5,7 +5,7 @@
 
 class Piece {
 private:
-    sf::Vector2u position;
+    sf::Vector2i anchorPosition;
     Direction rotation;
     PieceKind kind;
 protected:
@@ -20,8 +20,8 @@ protected:
         }
     }
 public:
-    Piece(sf::Vector2u position, Direction rotation, PieceKind kind) : position(position), rotation(rotation), kind(kind), mask(16, false) {};
-    Piece(sf::Vector2u position, PieceKind kind) : position(position), rotation(Direction::UP), kind(kind), mask(16, false) {};
+    Piece(sf::Vector2u anchorPosition, Direction rotation, PieceKind kind) : anchorPosition(anchorPosition), rotation(rotation), kind(kind), mask(16, false) {};
+    Piece(sf::Vector2u anchorPosition, PieceKind kind) : anchorPosition(anchorPosition), rotation(Direction::UP), kind(kind), mask(16, false) {};
     Piece() {};
     virtual ~Piece() {};
     void move(Direction direction);
@@ -29,5 +29,6 @@ public:
     bool isMaskFilled(int x, int y);
 
     PieceKind getKind() { return kind; }
-    sf::Vector2u getPosition() { return position; }
+    sf::Vector2i getPosition() { return anchorPosition; }
+    std::vector<sf::Vector2u> getGridPositions();
 };

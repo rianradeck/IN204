@@ -56,7 +56,7 @@ void Grid::placePiece(Piece piece) {
     for (int x = 0; x < 4; x++) {
         for (int y = 0; y < 4; y++) {
             if (piece.isMaskFilled(x, y)) {
-                sf::Vector2u position = piece.getPosition();
+                sf::Vector2i position = piece.getPosition();
                 PieceKind kind = piece.getKind();
                 set(position.x + x, position.y + y, kind);
             }
@@ -80,4 +80,45 @@ void Grid::loadGrid(Piece &currentPiece) {
 void Grid::update(Piece &currentPiece) {
     clearGrid();
     loadGrid(currentPiece);
+}
+
+std::vector<sf::Vector2i> getNewPositions(Piece currentPiece, Direction direction){
+    std::vector<sf::Vector2i> newPositions;
+    if (direction == Direction::UP) {
+        currentPiece.rotate();
+        for (sf::Vector2u newPos : currentPiece.getGridPositions())
+            newPositions.push_back((sf::Vector2i)newPos);
+    }
+    else {
+        for (sf::Vector2u pos : currentPiece.getGridPositions()) 
+            newPositions.push_back((sf::Vector2i)pos + sf::Vector2i(
+                static_cast<int>((direction == Direction::RIGHT) - (direction == Direction::LEFT)),
+                static_cast<int>(direction == Direction::DOWN)
+            ));
+    }
+    return newPositions;
+}
+
+bool Grid::canChange(Piece &currentPiece, Direction direction) {
+    std::vector<sf::Vector2i> newPositions = getNewPositions(currentPiece, direction);
+    std::cout << "New positions: " << std::endl;
+    for (sf::Vector2i &newPosition : newPositions) {
+        std::cout << "(" << newPosition.x << ", " << newPosition.y << ") ";
+    }
+    std::cout << std::endl;
+    
+    for (Piece staticPiece : staticPieces) {
+        std::vector<sf::Vector2u> staticPositions = staticPiece.getGridPositions();
+        for (sf::Vector2u &pos : staticPositions) {
+            for (sf::Vector2i &newPosition : newPositions) {
+                std::cout << "Checking static piece position: " << pos.x << ", " << pos.y << std::endl;
+                if ((sf::Vector2i)pos == newPosition) return false;
+            }
+        }
+    }
+
+    for (sf::Vector2i &newPosition : newPositions) 
+        if (newPosition.x < 0 || newPosition.x >= width || newPosition.y >= height) return false;
+    
+    return true;
 }

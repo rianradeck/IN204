@@ -28,4 +28,5 @@ public:
     void loadGrid(Piece &currentPiece);
     void update(Piece &currentPiece);
     void placePiece(Piece piece);
+    bool canChange(Piece &currentPiece, Direction direction);
 };
