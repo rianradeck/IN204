@@ -48,7 +48,7 @@ void Game::applyGravity() {
         currentPiece.move(Direction::DOWN);
 }
 
-void Game::update() {
+void Game::handlePieceChange() {
     if (nextPiece.getKind() == PieceKind::NONE) {
         nextPiece = pieceGenerator.generatePiece();
         nextGrid.update(nextPiece);
@@ -60,6 +60,10 @@ void Game::update() {
         nextGrid.update(nextPiece);
         currentPiece.setPosition({4, 0});
     }
+}
+
+void Game::update() {
+    handlePieceChange();
 
     std::vector<sf::Event> userInput = windowManager.updateInput();
 
@@ -71,8 +75,7 @@ void Game::update() {
         applyGravity();
     }
 
-    if (currentPiece.getKind() != PieceKind::NONE)
-        grid.update(currentPiece);
+    grid.update(currentPiece);
 }
 
 void Game::render() {

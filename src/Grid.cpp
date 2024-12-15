@@ -82,6 +82,7 @@ void Grid::loadGrid(Piece &currentPiece) {
 }
 
 void Grid::update(Piece &currentPiece) {
+    if (currentPiece.getKind() == PieceKind::NONE) return;
     clearGrid();
     loadGrid(currentPiece);
 }

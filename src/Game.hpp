@@ -24,4 +24,5 @@ public:
     sf::RenderWindow& getWindow();
     void calculateMovement(std::vector<sf::Event> userInput);
     void applyGravity();
+    void handlePieceChange();
 };
