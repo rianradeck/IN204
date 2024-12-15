@@ -19,11 +19,11 @@ void Grid::print() {
     }
 }
 
-void Grid::render(WindowManager& windowManager, sf::Vector2f gridPosition) {
-    sf::RenderWindow& window = windowManager.getWindow();
+void Grid::render(WindowManager &windowManager, sf::Vector2f gridPosition) {
+    sf::RenderWindow &window = windowManager.getWindow();
     sf::Vector2u windowSize = windowManager.getWindowSize();
-    if (gridPosition == sf::Vector2f(0, 0)) 
-        gridPosition = {(windowSize.x - tileSize.x*width)/2, (windowSize.y - tileSize.y*height)/2};
+    if (gridPosition == sf::Vector2f(0, 0))
+        gridPosition = {(windowSize.x - tileSize.x * width) / 2, (windowSize.y - tileSize.y * height) / 2};
 
     std::unordered_map<int, sf::Color> colors = {
         {0, sf::Color::White},
@@ -33,8 +33,7 @@ void Grid::render(WindowManager& windowManager, sf::Vector2f gridPosition) {
         {PieceKind::SQUARE, sf::Color::Yellow},
         {PieceKind::T, sf::Color::Magenta},
         {PieceKind::S, sf::Color::Green},
-        {PieceKind::Z, sf::Color::Red}
-    };
+        {PieceKind::Z, sf::Color::Red}};
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -46,13 +45,14 @@ void Grid::render(WindowManager& windowManager, sf::Vector2f gridPosition) {
             rect.setFillColor(color);
             rect.setOutlineColor(sf::Color::Black);
             rect.setOutlineThickness(1);
-            
+
             window.draw(rect);
         }
     }
 }
 
-void Grid::placePiece(Piece piece) {
+void Grid::drawPiece(Piece piece) {
+    if (piece.getKind() == PieceKind::NONE) return;
     for (int x = 0; x < 4; x++) {
         for (int y = 0; y < 4; y++) {
             if (piece.isMaskFilled(x, y)) {
@@ -64,42 +64,46 @@ void Grid::placePiece(Piece piece) {
     }
 }
 
-void Grid::freezePiece(Piece piece) {
-    staticPieces.push_back(piece);
+void Grid::drawTile(std::tuple<int, int, int> tile) {
+    int tileX, tileY, tileKind;
+    std::tie(tileX, tileY, tileKind) = tile;
+    set(tileX, tileY, tileKind);
 }
 
-void Grid::clearGrid(){
-    for (int i = 0;i < width * height; i++) {
+void Grid::freezePiece(Piece piece) {
+    for (sf::Vector2 tile : piece.getGridPositions()) {
+        staticTiles.push_back({tile.x, tile.y, piece.getKind()});
+    }
+}
+
+void Grid::clearGrid() {
+    for (int i = 0; i < width * height; i++) {
         cells[i] = 0;
     }
 }
 
-void Grid::loadGrid(Piece &currentPiece) {
-    for(Piece piece : staticPieces) {
-        placePiece(piece);
+void Grid::drawGrid(Piece &currentPiece) {
+    for (std::tuple<int, int, int> tile : staticTiles) {
+        drawTile(tile);
     }
-    placePiece(currentPiece);
+    if (currentPiece.getKind() != PieceKind::NONE)
+        drawPiece(currentPiece);
 }
 
 void Grid::update(Piece &currentPiece) {
-    if (currentPiece.getKind() == PieceKind::NONE) return;
     clearGrid();
-    loadGrid(currentPiece);
+    drawGrid(currentPiece);
 }
 
-std::vector<sf::Vector2i> getNewPositions(Piece currentPiece, Direction direction){
+std::vector<sf::Vector2i> getNewPositions(Piece currentPiece, Direction direction) {
     std::vector<sf::Vector2i> newPositions;
     if (direction == Direction::UP) {
         currentPiece.rotate();
         for (sf::Vector2u newPos : currentPiece.getGridPositions())
             newPositions.push_back((sf::Vector2i)newPos);
-    }
-    else {
-        for (sf::Vector2u pos : currentPiece.getGridPositions()) 
-            newPositions.push_back((sf::Vector2i)pos + sf::Vector2i(
-                static_cast<int>((direction == Direction::RIGHT) - (direction == Direction::LEFT)),
-                static_cast<int>(direction == Direction::DOWN)
-            ));
+    } else {
+        for (sf::Vector2u pos : currentPiece.getGridPositions())
+            newPositions.push_back((sf::Vector2i)pos + sf::Vector2i((int)((direction == Direction::RIGHT) - (direction == Direction::LEFT)), (int)(direction == Direction::DOWN)));
     }
     return newPositions;
 }
@@ -111,18 +115,43 @@ bool Grid::canChange(Piece &currentPiece, Direction direction) {
         std::cout << "(" << newPosition.x << ", " << newPosition.y << ") ";
     }
     std::cout << std::endl;
-    
-    for (Piece staticPiece : staticPieces) {
-        std::vector<sf::Vector2u> staticPositions = staticPiece.getGridPositions();
-        for (sf::Vector2u &pos : staticPositions) {
-            for (sf::Vector2i &newPosition : newPositions) {
-                if ((sf::Vector2i)pos == newPosition) return false;
+
+    for (auto [tileX, tileY, _] : staticTiles)
+        for (sf::Vector2i &newPosition : newPositions)
+            if (newPosition == sf::Vector2i(tileX, tileY)) return false;
+
+    for (sf::Vector2i &newPosition : newPositions)
+        if (newPosition.x < 0 || newPosition.x >= width || newPosition.y >= height) return false;
+
+    return true;
+}
+
+int Grid::clearFullLines() {
+    int linesCleared = 0;
+    for (int y = height - 1; y >= 0; y--) {
+        bool fullLine = true;
+        for (int x = 0; x < width; x++)
+            if (get(x, y) == 0) fullLine = false;
+        if (fullLine) {
+            std::cout << "Line " << y << " is full" << std::endl;
+            // print();
+            linesCleared++;
+            for (int _y = y; _y > 1; _y--) {
+                for (int x = 0; x < width; x++) {
+                    if (!get(x, _y)) continue;
+
+                    staticTiles.erase(std::remove(staticTiles.begin(), staticTiles.end(), std::make_tuple(x, _y, get(x, _y))), staticTiles.end());
+                    if (get(x, _y - 1)) {
+                        staticTiles.erase(std::remove(staticTiles.begin(), staticTiles.end(), std::make_tuple(x, _y - 1, get(x, _y - 1))), staticTiles.end());
+                        staticTiles.push_back({x, _y, get(x, _y - 1)});
+                    }
+
+                    set(x, _y, get(x, _y - 1));
+                }
             }
+            y++;
         }
     }
 
-    for (sf::Vector2i &newPosition : newPositions) 
-        if (newPosition.x < 0 || newPosition.x >= width || newPosition.y >= height) return false;
-    
-    return true;
+    return linesCleared;
 }

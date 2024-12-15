@@ -1,4 +1,5 @@
 #include <iostream>
+#include <tuple>
 #include <vector>
 
 #include "PieceGenerator.hpp"
@@ -9,11 +10,11 @@ private:
     int width, height;
     sf::Vector2f tileSize = {30, 30};
     std::vector<int> cells;
-    std::vector<Piece> staticPieces;
+    std::vector<std::tuple<int, int, int>> staticTiles;
 
 public:
-    Grid(int width, int height, std::vector<int> cells) : width(width), height(height), cells(cells), staticPieces({}) {};
-    Grid(int width, int height) : width(width), height(height), staticPieces({}) {
+    Grid(int width, int height, std::vector<int> cells) : width(width), height(height), cells(cells), staticTiles({}) {};
+    Grid(int width, int height) : width(width), height(height), staticTiles({}) {
         cells = std::vector<int>(width * height);
         for (int i = 0; i < width * height; i++) {
             cells[i] = 0;
@@ -28,11 +29,13 @@ public:
     sf::Vector2f getTileSize() { return tileSize; }
     void print();
     void render(WindowManager &windowManager, sf::Vector2f gridPosition);
-    
+
     void clearGrid();
-    void loadGrid(Piece &currentPiece);
+    void drawGrid(Piece &currentPiece);
     void update(Piece &currentPiece);
-    void placePiece(Piece piece);
+    void drawPiece(Piece piece);
     void freezePiece(Piece piece);
+    void drawTile(std::tuple<int, int, int> tile);
     bool canChange(Piece &currentPiece, Direction direction);
+    int clearFullLines();
 };

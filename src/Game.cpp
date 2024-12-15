@@ -76,6 +76,9 @@ void Game::update() {
     }
 
     grid.update(currentPiece);
+
+    // TODO: Add score properly
+    score += grid.clearFullLines();
 }
 
 void Game::render() {
