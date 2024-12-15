@@ -1,3 +1,5 @@
+// https://gamedev.stackexchange.com/questions/208367/how-is-rotation-defined-in-a-tetris-game
+
 class LinePiece : public Piece {
 private:
     std::vector<std::vector<bool>> masks = {

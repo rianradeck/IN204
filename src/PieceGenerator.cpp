@@ -2,7 +2,7 @@
 #include "Pieces.hpp"
 
 Piece PieceGenerator::generatePiece(){
-    std::uniform_int_distribution<std::mt19937::result_type> dist(1, 7);
+    std::uniform_int_distribution<std::mt19937::result_type> dist(0, 6);
     int random = dist(randomGenerator);
     switch (random) {
         case 0:

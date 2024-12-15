@@ -19,11 +19,11 @@ void Grid::print() {
     }
 }
 
-void Grid::render(WindowManager& windowManager) {
+void Grid::render(WindowManager& windowManager, sf::Vector2f gridPosition) {
     sf::RenderWindow& window = windowManager.getWindow();
     sf::Vector2u windowSize = windowManager.getWindowSize();
-    sf::Vector2f tileSize = {30, 30};
-    sf::Vector2f gridPosition = {(windowSize.x - tileSize.x*width)/2, (windowSize.y - tileSize.y*height)/2};
+    if (gridPosition == sf::Vector2f(0, 0)) 
+        gridPosition = {(windowSize.x - tileSize.x*width)/2, (windowSize.y - tileSize.y*height)/2};
 
     std::unordered_map<int, sf::Color> colors = {
         {0, sf::Color::White},
@@ -64,8 +64,12 @@ void Grid::placePiece(Piece piece) {
     }
 }
 
+void Grid::freezePiece(Piece piece) {
+    staticPieces.push_back(piece);
+}
+
 void Grid::clearGrid(){
-    for (int i = 0;i < 22 * 10; i++) {
+    for (int i = 0;i < width * height; i++) {
         cells[i] = 0;
     }
 }
@@ -111,7 +115,6 @@ bool Grid::canChange(Piece &currentPiece, Direction direction) {
         std::vector<sf::Vector2u> staticPositions = staticPiece.getGridPositions();
         for (sf::Vector2u &pos : staticPositions) {
             for (sf::Vector2i &newPosition : newPositions) {
-                std::cout << "Checking static piece position: " << pos.x << ", " << pos.y << std::endl;
                 if ((sf::Vector2i)pos == newPosition) return false;
             }
         }

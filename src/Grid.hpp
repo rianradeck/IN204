@@ -7,6 +7,7 @@
 class Grid {
 private:
     int width, height;
+    sf::Vector2f tileSize = {30, 30};
     std::vector<int> cells;
     std::vector<Piece> staticPieces;
 
@@ -22,11 +23,16 @@ public:
 
     void set(int x, int y, int value);
     int get(int x, int y);
+    int getWidth() { return width; }
+    int getHeight() { return height; }
+    sf::Vector2f getTileSize() { return tileSize; }
     void print();
-    void render(WindowManager &windowManager);
+    void render(WindowManager &windowManager, sf::Vector2f gridPosition);
+    
     void clearGrid();
     void loadGrid(Piece &currentPiece);
     void update(Piece &currentPiece);
     void placePiece(Piece piece);
+    void freezePiece(Piece piece);
     bool canChange(Piece &currentPiece, Direction direction);
 };

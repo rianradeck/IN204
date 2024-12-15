@@ -4,15 +4,18 @@
 
 class Game {
 private:
-    Grid grid = Grid(10, 22);
+    Grid grid = Grid(10, 22), nextGrid = Grid(4, 4);
     unsigned int score = 0;
     WindowManager windowManager;
     PieceGenerator pieceGenerator;
-    Piece currentPiece;
+    Piece currentPiece, nextPiece;
+    sf::Clock clock;
+    sf::Time lastTick;
+    const float UPDATE_RATE = 1.0f;
 
 public:
     Game() {
-        currentPiece = pieceGenerator.generatePiece();
+        lastTick = clock.getElapsedTime();
     };
     ~Game() {};
     void print();
@@ -20,4 +23,5 @@ public:
     void render();
     sf::RenderWindow& getWindow();
     void calculateMovement(std::vector<sf::Event> userInput);
+    void applyGravity();
 };

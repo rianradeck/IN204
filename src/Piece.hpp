@@ -22,11 +22,12 @@ protected:
 public:
     Piece(sf::Vector2u anchorPosition, Direction rotation, PieceKind kind) : anchorPosition(anchorPosition), rotation(rotation), kind(kind), mask(16, false) {};
     Piece(sf::Vector2u anchorPosition, PieceKind kind) : anchorPosition(anchorPosition), rotation(Direction::UP), kind(kind), mask(16, false) {};
-    Piece() {};
+    Piece() : kind(PieceKind::NONE) {};
     virtual ~Piece() {};
     void move(Direction direction);
     void rotate();
     bool isMaskFilled(int x, int y);
+    void setPosition(sf::Vector2i position) { anchorPosition = position; }
 
     PieceKind getKind() { return kind; }
     sf::Vector2i getPosition() { return anchorPosition; }

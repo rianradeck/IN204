@@ -1,4 +1,5 @@
 enum PieceKind {
+    NONE = 0,
     LINE = 1,
     J = 2,
     L = 3,
