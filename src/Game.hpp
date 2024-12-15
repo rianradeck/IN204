@@ -8,7 +8,6 @@ private:
     unsigned int score = 0;
     WindowManager windowManager;
     PieceGenerator pieceGenerator;
-    std::vector<Piece> staticPieces;
     Piece currentPiece;
 
 public:
