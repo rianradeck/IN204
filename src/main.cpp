@@ -1,13 +1,13 @@
 #include <iostream>
-#include "Game.hpp"
+#include "StateManager.hpp"
 
 int main() {
     
 
-    Game game;
+    StateManager stateManager;
 
-    while (game.getWindow().isOpen()) {
-        game.update();
-        game.render();
+    while (stateManager.isRunning()) {
+        stateManager.update();
+        stateManager.render();
     }
 }

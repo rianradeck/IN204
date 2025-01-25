@@ -17,4 +17,13 @@ public:
     };
     ~PieceGenerator() {};
     Piece generatePiece();
+
+    PieceGenerator& operator=(const PieceGenerator& other) {
+        if (this == &other) {
+            return *this;
+        }
+        this->seed = other.seed;
+        this->randomGenerator = other.randomGenerator;
+        return *this;
+    }
 };

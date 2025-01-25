@@ -6,7 +6,6 @@ class Game {
 private:
     Grid grid = Grid(10, 22), nextGrid = Grid(4, 4);
     unsigned int score = 0;
-    WindowManager windowManager;
     PieceGenerator pieceGenerator;
     Piece currentPiece, nextPiece;
     sf::Clock clock;
@@ -19,10 +18,24 @@ public:
     };
     ~Game() {};
     void print();
-    void update();
-    void render();
-    sf::RenderWindow& getWindow();
+    void update(WindowManager &windowManager);
+    void render(WindowManager &windowManager);
     void calculateMovement(std::vector<sf::Event> userInput);
     void applyGravity();
     void handlePieceChange();
+
+    Game& operator=(const Game& other) {
+        if (this == &other) {
+            return *this;
+        }
+        this->grid = other.grid;
+        this->nextGrid = other.nextGrid;
+        this->score = other.score;
+        this->pieceGenerator = other.pieceGenerator;
+        this->currentPiece = other.currentPiece;
+        this->nextPiece = other.nextPiece;
+        this->clock = other.clock;
+        this->lastTick = other.lastTick;
+        return *this;
+    }
 };

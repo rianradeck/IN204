@@ -6,8 +6,6 @@
 
 void Game::print() { grid.print(); }
 
-sf::RenderWindow& Game::getWindow() { return windowManager.getWindow(); }
-
 void Game::calculateMovement(std::vector<sf::Event> userInput) {
     std::unordered_map<sf::Keyboard::Key, Direction> keyMap = {
         {sf::Keyboard::Left, Direction::LEFT},
@@ -62,7 +60,7 @@ void Game::handlePieceChange() {
     }
 }
 
-void Game::update() {
+void Game::update(WindowManager &windowManager) {
     handlePieceChange();
 
     std::vector<sf::Event> userInput = windowManager.updateInput();
@@ -81,7 +79,7 @@ void Game::update() {
     score += grid.clearFullLines();
 }
 
-void Game::render() {
+void Game::render(WindowManager &windowManager) {
     windowManager.clear();
     sf::Vector2u windowSize = windowManager.getWindowSize();
     sf::Vector2f tileSize = grid.getTileSize();
