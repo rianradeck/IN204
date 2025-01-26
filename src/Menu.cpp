@@ -4,6 +4,7 @@
 void Menu::render(WindowManager &windowManager) {
     windowManager.clear();
     
+    singleButton.render(windowManager);
     hostButton.render(windowManager);
     joinButton.render(windowManager);
     ipInputBox.render(windowManager.getWindow());
@@ -28,6 +29,10 @@ GameState Menu::update(WindowManager &windowManager) {
                 std::cout << "Join button clicked" << std::endl;
                 std::cout << "IP Address: " << ipInputBox.getInput() << std::endl;
                 return GameState::SEARCHING_FOR_SERVER;
+            }
+            if (singleButton.isClicked(sf::Mouse::getPosition(window))) {
+                std::cout << "Single button clicked" << std::endl;
+                return GameState::PLAYING;
             }
         }
     }
