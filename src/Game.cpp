@@ -19,12 +19,14 @@ void Game::calculateMovement(std::vector<sf::Event> userInput) {
                 Direction direction = keyMap[event.key.code];
                 if (grid.canChange(currentPiece, direction))
                     currentPiece.move(direction);
+                return;
             }
 
             if (event.key.code == sf::Keyboard::Up) {
                 // TODO: Wall Kicks https://tetris.wiki/Super_Rotation_System
                 if (grid.canChange(currentPiece, Direction::UP))
                     currentPiece.rotate();
+                return;
             }
 
             if (event.key.code == sf::Keyboard::Space) {
@@ -32,6 +34,7 @@ void Game::calculateMovement(std::vector<sf::Event> userInput) {
                     currentPiece.move(Direction::DOWN);
                 grid.freezePiece(currentPiece);
                 currentPiece = Piece();
+                return;
             }
         }
     }
@@ -46,7 +49,7 @@ void Game::applyGravity() {
         currentPiece.move(Direction::DOWN);
 }
 
-void Game::handlePieceChange() {
+bool Game::handlePieceChange() {
     if (nextPiece.getKind() == PieceKind::NONE) {
         nextPiece = pieceGenerator.generatePiece();
         nextGrid.update(nextPiece);
@@ -57,11 +60,46 @@ void Game::handlePieceChange() {
         nextPiece.setPosition({0, 0});
         nextGrid.update(nextPiece);
         currentPiece.setPosition({4, 0});
+        return grid.canChange(currentPiece, Direction::DOWN);    
     }
+    return true;
 }
 
-void Game::update(WindowManager &windowManager) {
-    handlePieceChange();
+bool Game::networkPool(NetworkManager &networkManager) {
+    sf::Packet packet;
+    networkManager.receive(packet);
+    std::string data;
+    for(int i = 0; i < packet.getDataSize(); i++) {
+        data += ((char*)packet.getData())[i];
+    }
+    if (data.find("Game Over") != std::string::npos)
+        return false;
+    if (data.find("LINES") != std::string::npos) {
+        int linesCleared = std::stoi(std::string(1, data[data.find("LINES") + 5]));
+        grid.BlockLines(linesCleared);
+    }
+
+    for(int i = 0; i < opponentGrid.getCells().size(); i++) {
+        int cell;
+        packet >> cell;
+        opponentGrid.set(i % opponentGrid.getWidth(), i / opponentGrid.getWidth(), cell);
+    }
+
+    packet = sf::Packet();
+    for (int cell : grid.getCells())
+        packet << cell;
+    networkManager.send(packet);
+
+    return true;
+}
+
+GameState Game::update(WindowManager &windowManager, NetworkManager &networkManager) {
+    if (!handlePieceChange()){
+        sf::Packet packet;
+        packet << "Game Over";
+        networkManager.send(packet);
+        return GameState::GAME_OVER;
+    }
 
     std::vector<sf::Event> userInput = windowManager.updateInput();
 
@@ -75,8 +113,18 @@ void Game::update(WindowManager &windowManager) {
 
     grid.update(currentPiece);
 
-    // TODO: Add score properly
-    score += grid.clearFullLines();
+    int linesCleared = grid.clearFullLines();
+    if (linesCleared > 0){
+        sf::Packet packet;
+        packet << ("LINES" + std::to_string(linesCleared));
+        networkManager.send(packet);
+    }
+    // score += grid.clearFullLines();
+    
+    if (networkPool(networkManager) == false)
+        return GameState::YOU_WON;
+
+    return GameState::NO_CHANGE;
 }
 
 void Game::render(WindowManager &windowManager) {
@@ -102,7 +150,7 @@ void Game::render(WindowManager &windowManager) {
     opponentGrid.render(
         windowManager,
         sf::Vector2f(
-            windowSize.x / 2 - grid.getWidth() / 2 * tileSize.x - 50 - opponentGrid.getWidth() * tileSize.x,
+            windowSize.x / 2 - grid.getWidth() / 2 * tileSize.x - 150 - opponentGrid.getWidth() * tileSize.x,
             windowSize.y / 2 - opponentGrid.getHeight() / 2 * tileSize.y
         )
     );

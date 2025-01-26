@@ -6,7 +6,8 @@ enum PieceKind {
     SQUARE = 4,
     T = 5,
     S = 6,
-    Z = 7
+    Z = 7,
+    BLOCKED = 8
 };
 
 enum Direction {

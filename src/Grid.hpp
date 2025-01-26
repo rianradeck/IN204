@@ -26,6 +26,7 @@ public:
     int get(int x, int y);
     int getWidth() { return width; }
     int getHeight() { return height; }
+    std::vector<int> getCells() { return cells; }
     sf::Vector2f getTileSize() { return tileSize; }
     void setTileSize(sf::Vector2f tileSize) { this->tileSize = tileSize; }
     void print();
@@ -39,4 +40,5 @@ public:
     void drawTile(std::tuple<int, int, int> tile);
     bool canChange(Piece &currentPiece, Direction direction);
     int clearFullLines();
+    void BlockLines(int n_lines);
 };

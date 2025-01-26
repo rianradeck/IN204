@@ -3,16 +3,16 @@
 #include <iostream>
 
 void Piece::move(Direction direction) {
-    std::cout << "Old Anchor Position: " << anchorPosition.x << ", " << anchorPosition.y << std::endl;
-    std::cout << "Direction: " << direction << std::endl;
+    // std::cout << "Old Anchor Position: " << anchorPosition.x << ", " << anchorPosition.y << std::endl;
+    // std::cout << "Direction: " << direction << std::endl;
     anchorPosition.x += (direction == Direction::RIGHT) - (direction == Direction::LEFT);
     anchorPosition.y += (direction == Direction::DOWN) - (direction == Direction::UP);
-    std::cout << "New Anchor Position: " << anchorPosition.x << ", " << anchorPosition.y << std::endl;
+    // std::cout << "New Anchor Position: " << anchorPosition.x << ", " << anchorPosition.y << std::endl;
 }
 
 void Piece::rotate() {
     currentMask = (currentMask + 1) % masks.size();
-    std::cout << "Rotating to mask " << currentMask << std::endl;
+    // std::cout << "Rotating to mask " << currentMask << std::endl;
     mask = masks[currentMask];
 }
 

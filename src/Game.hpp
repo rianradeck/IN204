@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 
 #include "Grid.hpp"
+#include "Network.hpp"
+#include "GameState.hpp"
 
 class Game {
 private:
@@ -10,7 +12,7 @@ private:
     Piece currentPiece, nextPiece;
     sf::Clock clock;
     sf::Time lastTick;
-    const float UPDATE_RATE = 1.0f;
+    const float UPDATE_RATE = 2.0f;
 
 public:
     Game() {
@@ -19,11 +21,12 @@ public:
     };
     ~Game() {};
     void print();
-    void update(WindowManager &windowManager);
+    GameState update(WindowManager &windowManager, NetworkManager &networkManager);
     void render(WindowManager &windowManager);
     void calculateMovement(std::vector<sf::Event> userInput);
     void applyGravity();
-    void handlePieceChange();
+    bool handlePieceChange();
+    bool networkPool(NetworkManager &networkManager);
 
     Game& operator=(const Game& other) {
         if (this == &other) {
@@ -39,4 +42,5 @@ public:
         this->lastTick = other.lastTick;
         return *this;
     }
+
 };

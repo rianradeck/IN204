@@ -10,7 +10,7 @@ private:
 public:
     NetworkManager() : serverPort(25564), myAddress(sf::IpAddress::getLocalAddress()) {
         listener.setBlocking(false);
-        socket.setBlocking(false);
+        socket.setBlocking(true);
     }
     int listen();
     int accept();
@@ -22,5 +22,6 @@ public:
     sf::Socket::Status getConnectionStatus();
 
     void disconnect();
+    bool isServer();
 };
     

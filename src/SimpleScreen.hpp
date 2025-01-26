@@ -27,7 +27,14 @@ public:
         window.draw(text);
         window.display();
     }
-    void update(WindowManager &windowManager) {
-        windowManager.updateInput();
+    GameState update(WindowManager &windowManager) {
+        sf::RenderWindow& window = windowManager.getWindow();
+        std::vector<sf::Event> events = windowManager.updateInput();
+        for (sf::Event event : events) {
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+                return GameState::START_SCREEN;
+            }
+        }
+        return GameState::NO_CHANGE;
     }
 };

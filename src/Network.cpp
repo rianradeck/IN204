@@ -21,7 +21,7 @@ int NetworkManager::listen() {
 
 int NetworkManager::accept() {
     if ((connectionStatus = listener.accept(socket)) != sf::Socket::Done) {
-        std::cerr << "Error accepting connection" << std::endl;
+        // std::cerr << "No connection to accept" << std::endl;
         return -1;
     }
     std::cout << "Connection accepted" << std::endl;
@@ -31,7 +31,7 @@ int NetworkManager::accept() {
 
 int NetworkManager::connectToServer(sf::IpAddress address) {
     if ((connectionStatus = socket.connect(address, serverPort)) != sf::Socket::Done) {
-        std::cerr << "Error connecting to server" << std::endl;
+        // std::cerr << "Error connecting to server" << std::endl;
         return -1;
     }
     std::cout << "Connected to server" << std::endl;
@@ -58,11 +58,16 @@ int NetworkManager::receive(sf::Packet &packet) {
 }
 
 sf::Socket::Status NetworkManager::getConnectionStatus() {
-    std::cout << socket.getRemoteAddress() << std::endl;
     return connectionStatus;
 }
 
 void NetworkManager::disconnect() {
+    socket.setBlocking(true);
     socket.disconnect();
+    listener.close();
     connectionStatus = sf::Socket::Disconnected;
+}
+
+bool NetworkManager::isServer() {
+    return socket.isBlocking() == false;
 }

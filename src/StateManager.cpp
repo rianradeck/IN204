@@ -7,36 +7,47 @@ bool StateManager::isRunning() {
 }
 
 void StateManager::changeState(GameState newState) {
+    if (newState == GameState::NO_CHANGE) return;
+
     state = newState;
     if (state == GameState::PLAYING) {
-        game = Game(); // Will need to build with IP
+        game = new Game();
     } else if (state == GameState::WAITING_FOR_CONNECTION) {
-        networkManager.listen();
+        if(networkManager.listen() == -1) {
+            changeState(GameState::START_SCREEN);
+        }
     }
 }
 
 void StateManager::update() {
     switch (state) {
         case GameState::START_SCREEN:
+            networkManager.disconnect();
             changeState(menu.update(windowManager));
             break;
         case GameState::PLAYING:
-            game.update(windowManager);
+            changeState(game->update(windowManager, networkManager));
             break;
         case GameState::GAME_OVER:
+            networkManager.disconnect();
+            changeState(gameover.update(windowManager));
             break;
         case GameState::WAITING_FOR_CONNECTION:
-            host.update(windowManager);
+            changeState(host.update(windowManager));
             networkManager.accept();
             if (networkManager.getConnectionStatus() == sf::Socket::Status::Done) {
                 changeState(GameState::PLAYING);
             }
             break;
         case GameState::SEARCHING_FOR_SERVER:
-            join.update(windowManager);
-            if (networkManager.connectToServer(sf::IpAddress("127.0.0.1")) == 0) {
+            changeState(join.update(windowManager));
+            if (networkManager.connectToServer(sf::IpAddress(menu.getIp())) == 0) {
                 changeState(GameState::PLAYING);
             }
+            break;
+        case GameState::YOU_WON:
+            networkManager.disconnect();
+            changeState(youWon.update(windowManager));
             break;
     }
 }
@@ -47,15 +58,19 @@ void StateManager::render(){
             menu.render(windowManager);
             break;
         case GameState::PLAYING:
-            game.render(windowManager);
+            game->render(windowManager);
             break;
         case GameState::GAME_OVER:
+            gameover.render(windowManager);
             break;
         case GameState::WAITING_FOR_CONNECTION:
             host.render(windowManager);
             break;
         case GameState::SEARCHING_FOR_SERVER:
             join.render(windowManager);
+            break;
+        case GameState::YOU_WON:
+            youWon.render(windowManager);
             break;
     }
 }

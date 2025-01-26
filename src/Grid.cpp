@@ -33,7 +33,9 @@ void Grid::render(WindowManager &windowManager, sf::Vector2f gridPosition) {
         {PieceKind::SQUARE, sf::Color::Yellow},
         {PieceKind::T, sf::Color::Magenta},
         {PieceKind::S, sf::Color::Green},
-        {PieceKind::Z, sf::Color::Red}};
+        {PieceKind::Z, sf::Color::Red},
+        {PieceKind::BLOCKED, sf::Color(128, 128, 128)}
+    };
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -110,11 +112,11 @@ std::vector<sf::Vector2i> getNewPositions(Piece currentPiece, Direction directio
 
 bool Grid::canChange(Piece &currentPiece, Direction direction) {
     std::vector<sf::Vector2i> newPositions = getNewPositions(currentPiece, direction);
-    std::cout << "New positions: " << std::endl;
-    for (sf::Vector2i &newPosition : newPositions) {
-        std::cout << "(" << newPosition.x << ", " << newPosition.y << ") ";
-    }
-    std::cout << std::endl;
+    // std::cout << "New positions: " << std::endl;
+    // for (sf::Vector2i &newPosition : newPositions) {
+    //     std::cout << "(" << newPosition.x << ", " << newPosition.y << ") ";
+    // }
+    // std::cout << std::endl;
 
     for (auto [tileX, tileY, _] : staticTiles)
         for (sf::Vector2i &newPosition : newPositions)
@@ -131,7 +133,7 @@ int Grid::clearFullLines() {
     for (int y = height - 1; y >= 0; y--) {
         bool fullLine = true;
         for (int x = 0; x < width; x++)
-            if (get(x, y) == 0) fullLine = false;
+            if (get(x, y) == PieceKind::NONE || get(x, y) == PieceKind::BLOCKED) fullLine = false;
         if (fullLine) {
             std::cout << "Line " << y << " is full" << std::endl;
             // print();
@@ -154,4 +156,18 @@ int Grid::clearFullLines() {
     }
 
     return linesCleared;
+}
+
+void Grid::BlockLines(int n_lines){
+    std::cout << "Blocking " << n_lines << " lines" << std::endl;
+    for (int i = 0, y = height-1; i < n_lines; i++, y--){
+        for (int j = 0; j < width; j++){
+            if (get(j, y) == PieceKind::BLOCKED){
+                i--;
+                break;
+            }
+            set(j, i, PieceKind::BLOCKED);
+            staticTiles.push_back({j, y, PieceKind::BLOCKED});
+        }
+    }
 }
