@@ -9,6 +9,7 @@
  * 
  */
 #include <chrono>
+#include <memory>
 
 #include "StateManager.hpp"
 

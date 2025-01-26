@@ -15,6 +15,7 @@
 #include "Game.hpp"
 #include "Menu.hpp"
 #include "SimpleScreen.hpp"
+#include <memory>
 
 class StateManager {
 private:
