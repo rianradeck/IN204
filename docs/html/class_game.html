@@ -111,6 +111,12 @@ $(function(){initNavTree('class_game.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a47ee7b8c70cd175f147cb743e2417340" id="r_a47ee7b8c70cd175f147cb743e2417340"><td class="memItemLeft" align="right" valign="top"><a id="a47ee7b8c70cd175f147cb743e2417340" name="a47ee7b8c70cd175f147cb743e2417340"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b> (int seed)</td></tr>
+<tr class="separator:a47ee7b8c70cd175f147cb743e2417340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364367a2f583c68eedef24a9c96c0745" id="r_a364367a2f583c68eedef24a9c96c0745"><td class="memItemLeft" align="right" valign="top"><a id="a364367a2f583c68eedef24a9c96c0745" name="a364367a2f583c68eedef24a9c96c0745"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b> (int seed, int isOnline)</td></tr>
+<tr class="separator:a364367a2f583c68eedef24a9c96c0745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae954c7759cc186cdf83bd6cc3cfa8419" id="r_ae954c7759cc186cdf83bd6cc3cfa8419"><td class="memItemLeft" align="right" valign="top"><a id="ae954c7759cc186cdf83bd6cc3cfa8419" name="ae954c7759cc186cdf83bd6cc3cfa8419"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> ()</td></tr>
 <tr class="separator:ae954c7759cc186cdf83bd6cc3cfa8419"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,9 +126,9 @@ GameState&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (<a c
 <tr class="memitem:af03f7717ef79f417d6616fd3d42728a6" id="r_af03f7717ef79f417d6616fd3d42728a6"><td class="memItemLeft" align="right" valign="top"><a id="af03f7717ef79f417d6616fd3d42728a6" name="af03f7717ef79f417d6616fd3d42728a6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (<a class="el" href="class_window_manager.html">WindowManager</a> &amp;windowManager)</td></tr>
 <tr class="separator:af03f7717ef79f417d6616fd3d42728a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49ffd2a2c257cb8bdfa5ae4e87ec9adc" id="r_a49ffd2a2c257cb8bdfa5ae4e87ec9adc"><td class="memItemLeft" align="right" valign="top"><a id="a49ffd2a2c257cb8bdfa5ae4e87ec9adc" name="a49ffd2a2c257cb8bdfa5ae4e87ec9adc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMovement</b> (std::vector&lt; sf::Event &gt; userInput)</td></tr>
-<tr class="separator:a49ffd2a2c257cb8bdfa5ae4e87ec9adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6d03324bf156fd63594cde73b03c79" id="r_a9d6d03324bf156fd63594cde73b03c79"><td class="memItemLeft" align="right" valign="top"><a id="a9d6d03324bf156fd63594cde73b03c79" name="a9d6d03324bf156fd63594cde73b03c79"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMovement</b> (std::vector&lt; sf::Event &gt; userInput)</td></tr>
+<tr class="separator:a9d6d03324bf156fd63594cde73b03c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a106062b7b3285fcd7ad4c9f6ab6535cc" id="r_a106062b7b3285fcd7ad4c9f6ab6535cc"><td class="memItemLeft" align="right" valign="top"><a id="a106062b7b3285fcd7ad4c9f6ab6535cc" name="a106062b7b3285fcd7ad4c9f6ab6535cc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>applyGravity</b> ()</td></tr>
 <tr class="separator:a106062b7b3285fcd7ad4c9f6ab6535cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,9 +138,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>handlePieceChange</b>
 <tr class="memitem:a30988ab2075175d6c5cac435cc264dd9" id="r_a30988ab2075175d6c5cac435cc264dd9"><td class="memItemLeft" align="right" valign="top"><a id="a30988ab2075175d6c5cac435cc264dd9" name="a30988ab2075175d6c5cac435cc264dd9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>networkPool</b> (<a class="el" href="class_network_manager.html">NetworkManager</a> &amp;networkManager)</td></tr>
 <tr class="separator:a30988ab2075175d6c5cac435cc264dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7143aeed6a7499e4689b5b64c7f72b65" id="r_a7143aeed6a7499e4689b5b64c7f72b65"><td class="memItemLeft" align="right" valign="top"><a id="a7143aeed6a7499e4689b5b64c7f72b65" name="a7143aeed6a7499e4689b5b64c7f72b65"></a>
-<a class="el" href="class_game.html">Game</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_game.html">Game</a> &amp;other)</td></tr>
-<tr class="separator:a7143aeed6a7499e4689b5b64c7f72b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/henri/IN204/src/<a class="el" href="_game_8hpp_source.html">Game.hpp</a></li>

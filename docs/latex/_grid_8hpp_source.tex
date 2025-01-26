@@ -39,12 +39,12 @@
 \DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ render(\mbox{\hyperlink{class_window_manager}{WindowManager}}\ \&windowManager,\ sf::Vector2f\ gridPosition);}
 \DoxyCodeLine{00045\ }
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ clearGrid();}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGrid(\mbox{\hyperlink{class_piece}{Piece}}\ \&currentPiece);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ update(\mbox{\hyperlink{class_piece}{Piece}}\ \&currentPiece);}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ drawPiece(\mbox{\hyperlink{class_piece}{Piece}}\ piece);}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ freezePiece(\mbox{\hyperlink{class_piece}{Piece}}\ piece);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGrid(std::unique\_ptr<Piece>\&\ currentPiece);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ update(std::unique\_ptr<Piece>\&\ currentPiece);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ drawPiece(std::unique\_ptr<Piece>\&\ piece);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ freezePiece(std::unique\_ptr<Piece>\&\ piece);}
 \DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ drawTile(std::tuple<int,\ int,\ int>\ tile);}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ canChange(\mbox{\hyperlink{class_piece}{Piece}}\ \&currentPiece,\ Direction\ direction);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ canChange(std::unique\_ptr<Piece>\&\ currentPiece,\ Direction\ direction);}
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ clearFullLines();}
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ BlockLines(\textcolor{keywordtype}{int}\ n\_lines);}
 \DoxyCodeLine{00055\ \};}

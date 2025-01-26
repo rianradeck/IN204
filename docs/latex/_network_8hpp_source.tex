@@ -25,11 +25,28 @@
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ send(sf::Packet\ \&packet);}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ receive(sf::Packet\ \&packet);}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ sf::Socket::Status\ getConnectionStatus();}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ disconnect();}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ isServer();}
-\DoxyCodeLine{00037\ \};}
-\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ send\_data(T\ data)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ sf::Packet\ packet;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ packet\ <<\ data;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ send(packet);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ receive\_data(T\ \&data)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ sf::Packet\ packet;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ status\ =\ receive(packet);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ ==\ 0)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ packet\ >>\ data;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ sf::Socket::Status\ getConnectionStatus();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ disconnect();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ isServer();}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ \ \ \ \ }
 
 \end{DoxyCode}

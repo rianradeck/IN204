@@ -7,6 +7,7 @@ Defines all the functions concerning the game\textquotesingle{}s grid, as full l
 
 {\ttfamily \#include "{}Grid.\+hpp"{}}\newline
 {\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
 Include dependency graph for Grid.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -18,8 +19,8 @@ Include dependency graph for Grid.\+cpp\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{_grid_8cpp_a015c950a329282e1f78ff997d88b306a}\label{_grid_8cpp_a015c950a329282e1f78ff997d88b306a} 
-std\+::vector$<$ sf\+::\+Vector2i $>$ {\bfseries get\+New\+Positions} (\mbox{\hyperlink{class_piece}{Piece}} current\+Piece, Direction direction)
+\Hypertarget{_grid_8cpp_a0adaebd83fba1b1d09f2da8fdd19f3b1}\label{_grid_8cpp_a0adaebd83fba1b1d09f2da8fdd19f3b1} 
+std\+::vector$<$ sf\+::\+Vector2i $>$ {\bfseries get\+New\+Positions} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_piece}{Piece}} $>$ \&current\+Piece, Direction direction)
 \end{DoxyCompactItemize}
 
 

@@ -22,16 +22,16 @@
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ randomGenerator\ =\ std::mt19937(seed);}
 \DoxyCodeLine{00028\ \ \ \ \ \};}
 \DoxyCodeLine{00029\ \ \ \ \ \string~PieceGenerator()\ \{\};}
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_piece}{Piece}}\ generatePiece();}
+\DoxyCodeLine{00030\ \ \ \ \ std::unique\_ptr<Piece>\ generatePiece();}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ PieceGenerator\&\ operator=(\textcolor{keyword}{const}\ PieceGenerator\&\ other)\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&other)\ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ this-\/>seed\ =\ other.seed;}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ this-\/>randomGenerator\ =\ other.randomGenerator;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ PieceGenerator\&\ operator=(const\ PieceGenerator\&\ other)\ \{}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ if\ (this\ ==\ \&other)\ \{}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ return\ *this;}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ this-\/>seed\ =\ other.seed;}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ this-\/>randomGenerator\ =\ other.randomGenerator;}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ return\ *this;}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ \}}}
 \DoxyCodeLine{00040\ \};}
 
 \end{DoxyCode}
