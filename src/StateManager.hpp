@@ -18,11 +18,16 @@
 
 class StateManager {
 private:
-    GameState state;
+    // Managers
     NetworkManager networkManager;
-    Game *game;
-    Menu menu;
     WindowManager windowManager;
+
+    // Tetris
+    GameState state;
+    std::unique_ptr<Game> game;
+    
+    // Screens
+    Menu menu;
     SimpleScreen host = SimpleScreen("Waiting for connection", windowManager);
     SimpleScreen join = SimpleScreen("Searching for server", windowManager);
     SimpleScreen gameover = SimpleScreen("Game Over", windowManager);
@@ -31,7 +36,7 @@ public:
     StateManager() : state(GameState::START_SCREEN) {}
 
     GameState getCurrentState() const { return state; }
-    void changeState(GameState newState);
+    void changeState(GameState newState, int seed = 42);
 
     sf::RenderWindow& getWindow();
     bool isRunning();

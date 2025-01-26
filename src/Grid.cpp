@@ -12,6 +12,7 @@
 #include "Grid.hpp"
 
 #include <unordered_map>
+#include <memory>
 
 void Grid::set(int x, int y, int value) {
     cells[y * width + x] = value;
@@ -64,13 +65,13 @@ void Grid::render(WindowManager &windowManager, sf::Vector2f gridPosition) {
     }
 }
 
-void Grid::drawPiece(Piece piece) {
-    if (piece.getKind() == PieceKind::NONE) return;
+void Grid::drawPiece(std::unique_ptr<Piece>& piece) {
+    if (piece->getKind() == PieceKind::NONE) return;
     for (int x = 0; x < 4; x++) {
         for (int y = 0; y < 4; y++) {
-            if (piece.isMaskFilled(x, y)) {
-                sf::Vector2i position = piece.getPosition();
-                PieceKind kind = piece.getKind();
+            if (piece->isMaskFilled(x, y)) {
+                sf::Vector2i position = piece->getPosition();
+                PieceKind kind = piece->getKind();
                 set(position.x + x, position.y + y, kind);
             }
         }
@@ -83,9 +84,9 @@ void Grid::drawTile(std::tuple<int, int, int> tile) {
     set(tileX, tileY, tileKind);
 }
 
-void Grid::freezePiece(Piece piece) {
-    for (sf::Vector2 tile : piece.getGridPositions()) {
-        staticTiles.push_back({tile.x, tile.y, piece.getKind()});
+void Grid::freezePiece(std::unique_ptr<Piece>& piece) {
+    for (sf::Vector2 tile : piece->getGridPositions()) {
+        staticTiles.push_back({tile.x, tile.y, piece->getKind()});
     }
 }
 
@@ -95,34 +96,35 @@ void Grid::clearGrid() {
     }
 }
 
-void Grid::drawGrid(Piece &currentPiece) {
+void Grid::drawGrid(std::unique_ptr<Piece>& currentPiece) {
     for (std::tuple<int, int, int> tile : staticTiles) {
         drawTile(tile);
     }
-    if (currentPiece.getKind() != PieceKind::NONE)
+    if (currentPiece->getKind() != PieceKind::NONE)
         drawPiece(currentPiece);
 }
 
-void Grid::update(Piece &currentPiece) {
+void Grid::update(std::unique_ptr<Piece>& currentPiece) {
     clearGrid();
     drawGrid(currentPiece);
 }
 
-std::vector<sf::Vector2i> getNewPositions(Piece currentPiece, Direction direction) {
+std::vector<sf::Vector2i> getNewPositions(std::unique_ptr<Piece>& currentPiece, Direction direction) {
     std::vector<sf::Vector2i> newPositions;
     if (direction == Direction::UP) {
-        currentPiece.rotate();
-        for (sf::Vector2u newPos : currentPiece.getGridPositions())
+        currentPiece->rotate();
+        for (sf::Vector2u newPos : currentPiece->getGridPositions())
             newPositions.push_back((sf::Vector2i)newPos);
     } else {
-        for (sf::Vector2u pos : currentPiece.getGridPositions())
+        for (sf::Vector2u pos : currentPiece->getGridPositions())
             newPositions.push_back((sf::Vector2i)pos + sf::Vector2i((int)((direction == Direction::RIGHT) - (direction == Direction::LEFT)), (int)(direction == Direction::DOWN)));
     }
     return newPositions;
 }
 
-bool Grid::canChange(Piece &currentPiece, Direction direction) {
-    std::vector<sf::Vector2i> newPositions = getNewPositions(currentPiece, direction);
+bool Grid::canChange(std::unique_ptr<Piece>& currentPiece, Direction direction) {
+    std::unique_ptr<Piece> tempPiece = std::make_unique<Piece>(*currentPiece);
+    std::vector<sf::Vector2i> newPositions = getNewPositions(tempPiece, direction);
     // std::cout << "New positions: " << std::endl;
     // for (sf::Vector2i &newPosition : newPositions) {
     //     std::cout << "(" << newPosition.x << ", " << newPosition.y << ") ";

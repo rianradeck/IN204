@@ -12,24 +12,24 @@
 #include "PieceGenerator.hpp"
 #include "Pieces.hpp"
 
-Piece PieceGenerator::generatePiece(){
+std::unique_ptr<Piece> PieceGenerator::generatePiece() {
     std::uniform_int_distribution<std::mt19937::result_type> dist(0, 6);
     int random = dist(randomGenerator);
     switch (random) {
         case 0:
-            return LinePiece(defaultPosition);
+            return std::make_unique<LinePiece>(defaultPosition);
         case 1:
-            return JPiece(defaultPosition);
+            return std::make_unique<JPiece>(defaultPosition);
         case 2:
-            return LPiece(defaultPosition);
+            return std::make_unique<LPiece>(defaultPosition);
         case 3:
-            return SquarePiece(defaultPosition);
+            return std::make_unique<SquarePiece>(defaultPosition);
         case 4:
-            return SPiece(defaultPosition);
+            return std::make_unique<SPiece>(defaultPosition);
         case 5:
-            return TPiece(defaultPosition);
+            return std::make_unique<TPiece>(defaultPosition);
         case 6:
-            return ZPiece(defaultPosition);
+            return std::make_unique<ZPiece>(defaultPosition);
     }
-    return Piece();
+    return std::make_unique<Piece>();
 }

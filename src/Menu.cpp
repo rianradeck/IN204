@@ -31,14 +31,14 @@ GameState Menu::update(WindowManager &windowManager) {
         ipInputBox.handleEvent(event);
 
         if (event.type == sf::Event::MouseButtonPressed) {
-            std::cout << "Mouse button pressed" << std::endl;
             if (hostButton.isClicked(sf::Mouse::getPosition(window))) {
-                std::cout << "Host button clicked" << std::endl;
                 return GameState::WAITING_FOR_CONNECTION;
             }
-            if (joinButton.isClicked(sf::Mouse::getPosition(window)) && ipInputBox.isFilled()) {
-                std::cout << "Join button clicked" << std::endl;
-                std::cout << "IP Address: " << ipInputBox.getInput() << std::endl;
+            if (joinButton.isClicked(sf::Mouse::getPosition(window))) {
+                if (ipInputBox.getInput().empty()) 
+                    std::cout << "IP Address is empty, defaulting to localhost" << std::endl;
+                else
+                    std::cout << "IP Address: " << ipInputBox.getInput() << std::endl;
                 return GameState::SEARCHING_FOR_SERVER;
             }
             if (singleButton.isClicked(sf::Mouse::getPosition(window))) {

@@ -44,12 +44,12 @@ public:
     void render(WindowManager &windowManager, sf::Vector2f gridPosition);
 
     void clearGrid();
-    void drawGrid(Piece &currentPiece);
-    void update(Piece &currentPiece);
-    void drawPiece(Piece piece);
-    void freezePiece(Piece piece);
+    void drawGrid(std::unique_ptr<Piece>& currentPiece);
+    void update(std::unique_ptr<Piece>& currentPiece);
+    void drawPiece(std::unique_ptr<Piece>& piece);
+    void freezePiece(std::unique_ptr<Piece>& piece);
     void drawTile(std::tuple<int, int, int> tile);
-    bool canChange(Piece &currentPiece, Direction direction);
+    bool canChange(std::unique_ptr<Piece>& currentPiece, Direction direction);
     int clearFullLines();
     void BlockLines(int n_lines);
 };

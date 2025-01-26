@@ -45,6 +45,9 @@ public:
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
                 return GameState::START_SCREEN;
             }
+            if (event.type == sf::Event::Closed) {
+                return GameState::EXIT;
+            }
         }
         return GameState::NO_CHANGE;
     }

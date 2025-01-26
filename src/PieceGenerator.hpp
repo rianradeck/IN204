@@ -27,14 +27,14 @@ public:
         randomGenerator = std::mt19937(seed);
     };
     ~PieceGenerator() {};
-    Piece generatePiece();
+    std::unique_ptr<Piece> generatePiece();
 
-    PieceGenerator& operator=(const PieceGenerator& other) {
-        if (this == &other) {
-            return *this;
-        }
-        this->seed = other.seed;
-        this->randomGenerator = other.randomGenerator;
-        return *this;
-    }
+    // PieceGenerator& operator=(const PieceGenerator& other) {
+    //     if (this == &other) {
+    //         return *this;
+    //     }
+    //     this->seed = other.seed;
+    //     this->randomGenerator = other.randomGenerator;
+    //     return *this;
+    // }
 };
