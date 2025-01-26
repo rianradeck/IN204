@@ -7,6 +7,7 @@ enum class GameState {
     GAME_OVER,
     WAITING_FOR_CONNECTION,
     SEARCHING_FOR_SERVER,
-    YOU_WON
+    YOU_WON,
+    EXIT
 };
 

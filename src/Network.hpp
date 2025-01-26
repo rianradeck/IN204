@@ -19,6 +19,23 @@ public:
     int send(sf::Packet &packet);
     int receive(sf::Packet &packet);
 
+    template <typename T>
+    int send_data(T data) {
+        sf::Packet packet;
+        packet << data;
+        return send(packet);
+    }
+
+    template <typename T>
+    int receive_data(T &data) {
+        sf::Packet packet;
+        int status = receive(packet);
+        if (status == 0) {
+            packet >> data;
+        }
+        return status;
+    }
+
     sf::Socket::Status getConnectionStatus();
 
     void disconnect();
