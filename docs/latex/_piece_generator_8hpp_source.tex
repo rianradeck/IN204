@@ -1,0 +1,37 @@
+\doxysection{Piece\+Generator.\+hpp}
+\hypertarget{_piece_generator_8hpp_source}{}\label{_piece_generator_8hpp_source}\index{C:/Users/henri/IN204/src/PieceGenerator.hpp@{C:/Users/henri/IN204/src/PieceGenerator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Piece.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }PieceGenerator\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ seed;}
+\DoxyCodeLine{00020\ \ \ \ \ std::mt19937\ randomGenerator;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ sf::Vector2u\ defaultPosition\ =\ \{4,\ 0\};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ PieceGenerator(\textcolor{keywordtype}{int}\ seed)\ :\ seed(seed)\ \{\ randomGenerator\ =\ std::mt19937(seed);\ \};}
+\DoxyCodeLine{00025\ \ \ \ \ PieceGenerator()\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ seed\ =\ 42;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ randomGenerator\ =\ std::mt19937(seed);}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \string~PieceGenerator()\ \{\};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_piece}{Piece}}\ generatePiece();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ PieceGenerator\&\ operator=(\textcolor{keyword}{const}\ PieceGenerator\&\ other)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&other)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ this-\/>seed\ =\ other.seed;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ this-\/>randomGenerator\ =\ other.randomGenerator;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+\doxysection{Network.\+hpp}
+\hypertarget{_network_8hpp_source}{}\label{_network_8hpp_source}\index{C:/Users/henri/IN204/src/Network.hpp@{C:/Users/henri/IN204/src/Network.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <SFML/Network.hpp>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }NetworkManager\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ sf::TcpListener\ listener;}
+\DoxyCodeLine{00017\ \ \ \ \ sf::TcpSocket\ socket;}
+\DoxyCodeLine{00018\ \ \ \ \ sf::IpAddress\ serverAddress,\ myAddress;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ serverPort;}
+\DoxyCodeLine{00020\ \ \ \ \ sf::Socket::Status\ connectionStatus;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ NetworkManager()\ :\ serverPort(25564),\ myAddress(sf::IpAddress::getLocalAddress())\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ listener.setBlocking(\textcolor{keyword}{false});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ socket.setBlocking(\textcolor{keyword}{true});}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ listen();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ accept();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ connectToServer(sf::IpAddress\ address);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ send(sf::Packet\ \&packet);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ receive(sf::Packet\ \&packet);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ sf::Socket::Status\ getConnectionStatus();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ disconnect();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ isServer();}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+
+\end{DoxyCode}

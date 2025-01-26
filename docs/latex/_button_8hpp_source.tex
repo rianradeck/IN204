@@ -1,0 +1,34 @@
+\doxysection{Button.\+hpp}
+\hypertarget{_button_8hpp_source}{}\label{_button_8hpp_source}\index{C:/Users/henri/IN204/src/Button.hpp@{C:/Users/henri/IN204/src/Button.hpp}}
+\mbox{\hyperlink{_button_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Window.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }Button\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ sf::RectangleShape\ button;}
+\DoxyCodeLine{00020\ \ \ \ \ sf::Text\ text;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ Button(sf::Vector2f\ position,\ sf::Vector2f\ size,\ sf::Color\ color,\ std::string\ \_text)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ button.setSize(size);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ button.setFillColor(color);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ button.setPosition(position);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ button.setOutlineColor(sf::Color::Black);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ button.setOutlineThickness(1);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ text.setString(\_text);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ text.setCharacterSize(24);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ text.setFillColor(sf::Color::Black);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ text.setPosition(position);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \string~Button()\ \{\}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ render(\mbox{\hyperlink{class_window_manager}{WindowManager}}\ \&windowManager);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ isClicked(sf::Vector2i\ mousePosition);}
+\DoxyCodeLine{00037\ \};}
+
+\end{DoxyCode}

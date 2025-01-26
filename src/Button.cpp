@@ -1,3 +1,14 @@
+/**
+ * @file Button.cpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief This file sets the design definitions for the buttons in the game
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "Button.hpp"
 
 void Button::render(WindowManager &windowManager) {

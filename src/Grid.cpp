@@ -1,3 +1,14 @@
+/**
+ * @file Grid.cpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Defines all the functions concerning the game's grid, as full lines, block enemy's lines and the possibilities of moves for the pieces
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "Grid.hpp"
 
 #include <unordered_map>

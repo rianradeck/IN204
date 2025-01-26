@@ -1,3 +1,14 @@
+/**
+ * @file Grid.hpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Definition of main grid's controller class
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include <iostream>
 #include <tuple>
 #include <vector>

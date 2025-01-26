@@ -1,0 +1,43 @@
+\doxysection{Piece.\+hpp}
+\hypertarget{_piece_8hpp_source}{}\label{_piece_8hpp_source}\index{C:/Users/henri/IN204/src/Piece.hpp@{C:/Users/henri/IN204/src/Piece.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}enums.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }Piece\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ sf::Vector2i\ anchorPosition;}
+\DoxyCodeLine{00020\ \ \ \ \ Direction\ rotation;}
+\DoxyCodeLine{00021\ \ \ \ \ PieceKind\ kind;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<std::vector<bool>>\ masks;}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<bool>\ mask;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setMasks(\textcolor{keyword}{const}\ std::vector<std::vector<bool>>\&\ newMasks)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ masks\ =\ newMasks;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!masks.empty())\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ currentMask\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ Piece(sf::Vector2u\ anchorPosition,\ Direction\ rotation,\ PieceKind\ kind)\ :\ anchorPosition(anchorPosition),\ rotation(rotation),\ kind(kind),\ mask(16,\ \textcolor{keyword}{false})\ \{\};}
+\DoxyCodeLine{00035\ \ \ \ \ Piece(sf::Vector2u\ anchorPosition,\ PieceKind\ kind)\ :\ anchorPosition(anchorPosition),\ rotation(Direction::UP),\ kind(kind),\ mask(16,\ \textcolor{keyword}{false})\ \{\};}
+\DoxyCodeLine{00036\ \ \ \ \ Piece()\ :\ kind(PieceKind::NONE)\ \{\};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Piece()\ \{\};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ move(Direction\ direction);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ rotate();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMaskFilled(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ setPosition(sf::Vector2i\ position)\ \{\ anchorPosition\ =\ position;\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ PieceKind\ getKind()\ \{\ \textcolor{keywordflow}{return}\ kind;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ sf::Vector2i\ getPosition()\ \{\ \textcolor{keywordflow}{return}\ anchorPosition;\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<sf::Vector2u>\ getGridPositions();}
+\DoxyCodeLine{00046\ \};}
+
+\end{DoxyCode}

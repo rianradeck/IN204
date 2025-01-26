@@ -1,0 +1,66 @@
+\doxysection{Piece Class Reference}
+\hypertarget{class_piece}{}\label{class_piece}\index{Piece@{Piece}}
+
+
+Inheritance diagram for Piece\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_piece__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_piece_ad586f872ec026665b70f344f5c67bd31}\label{class_piece_ad586f872ec026665b70f344f5c67bd31} 
+{\bfseries Piece} (sf\+::\+Vector2u anchor\+Position, Direction rotation, Piece\+Kind kind)
+\item 
+\Hypertarget{class_piece_a4ff841d25ed362d296df4d03a0f2ad18}\label{class_piece_a4ff841d25ed362d296df4d03a0f2ad18} 
+{\bfseries Piece} (sf\+::\+Vector2u anchor\+Position, Piece\+Kind kind)
+\item 
+\Hypertarget{class_piece_ac9d31248eca3fa361bd538c8f01a627e}\label{class_piece_ac9d31248eca3fa361bd538c8f01a627e} 
+void {\bfseries move} (Direction direction)
+\item 
+\Hypertarget{class_piece_a39a1d507c3ec6ab627ccea8ab191cd79}\label{class_piece_a39a1d507c3ec6ab627ccea8ab191cd79} 
+void {\bfseries rotate} ()
+\item 
+\Hypertarget{class_piece_af6f8cd54372e724fe972ad1031560f03}\label{class_piece_af6f8cd54372e724fe972ad1031560f03} 
+bool {\bfseries is\+Mask\+Filled} (int x, int y)
+\item 
+\Hypertarget{class_piece_a513b61f083f875294f6eecdb28c26b07}\label{class_piece_a513b61f083f875294f6eecdb28c26b07} 
+void {\bfseries set\+Position} (sf\+::\+Vector2i position)
+\item 
+\Hypertarget{class_piece_af6041ba4f74fd409604f8c5a8c1093f6}\label{class_piece_af6041ba4f74fd409604f8c5a8c1093f6} 
+Piece\+Kind {\bfseries get\+Kind} ()
+\item 
+\Hypertarget{class_piece_a483bd2305a51f65955931b2e974dd23c}\label{class_piece_a483bd2305a51f65955931b2e974dd23c} 
+sf\+::\+Vector2i {\bfseries get\+Position} ()
+\item 
+\Hypertarget{class_piece_a4730f348784a38aa27aa2b94e6bdfc94}\label{class_piece_a4730f348784a38aa27aa2b94e6bdfc94} 
+std\+::vector$<$ sf\+::\+Vector2u $>$ {\bfseries get\+Grid\+Positions} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_piece_a58d74da50cb609fb8cb40a2956e350a1}\label{class_piece_a58d74da50cb609fb8cb40a2956e350a1} 
+void {\bfseries set\+Masks} (const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&new\+Masks)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_piece_a3ac220c946aaad1535fb06f51abc3c41}\label{class_piece_a3ac220c946aaad1535fb06f51abc3c41} 
+std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ {\bfseries masks}
+\item 
+\Hypertarget{class_piece_aa61fdee8cf6ad27159f1c7c51993e4f3}\label{class_piece_aa61fdee8cf6ad27159f1c7c51993e4f3} 
+std\+::vector$<$ bool $>$ {\bfseries mask}
+\item 
+\Hypertarget{class_piece_a014fffdd1b157fdf7b602c651fa5d0ad}\label{class_piece_a014fffdd1b157fdf7b602c651fa5d0ad} 
+int {\bfseries current\+Mask} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/henri/\+IN204/src/Piece.\+hpp\item 
+C\+:/\+Users/henri/\+IN204/src/Piece.\+cpp\end{DoxyCompactItemize}

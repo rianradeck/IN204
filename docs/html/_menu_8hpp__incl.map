@@ -1,0 +1,25 @@
+<map id="C:/Users/henri/IN204/src/Menu.hpp" name="C:/Users/henri/IN204/src/Menu.hpp">
+<area shape="rect" id="Node000001" title="Define design aspects of the initial menu." alt="" coords="183,5,328,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="111,245,248,272"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,51,184,71,163,97,153,131,154,167,161,201,170,230,165,232,156,203,148,167,148,130,158,95,181,67,209,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="320,171,373,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,47,333,156,329,158,265,50"/>
+<area shape="rect" id="Node000004" href="$_window_8hpp_source.html" title=" " alt="" coords="5,171,98,197"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,51,158,71,119,98,90,128,68,159,64,156,86,125,115,94,156,67,198,46"/>
+<area shape="rect" id="Node000006" href="$_button_8hpp.html" title="Definition of the class Button." alt="" coords="173,96,258,123"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="248,50,231,83,226,81,243,47"/>
+<area shape="rect" id="Node000008" href="$_game_state_8hpp.html" title="Definition of the possible states of the game." alt="" coords="455,96,568,123"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="322,46,457,88,456,93,321,51"/>
+<area shape="rect" id="Node000009" href="$_input_box_8hpp.html" title="Sets definition of text field to type the IP Address for multiplayer." alt="" coords="333,96,431,123"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="290,46,351,85,348,90,287,51"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="75,196,145,235,143,240,72,200"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="23,245,80,272"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="54,198,54,230,49,230,49,198"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="215,124,189,231,184,230,210,123"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="240,121,311,160,309,165,237,126"/>
+<area shape="poly" id="edge9_Node000006_Node000004" title=" " alt="" coords="188,126,95,166,93,161,186,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="224,171,295,197"/>
+<area shape="poly" id="edge10_Node000006_Node000007" title=" " alt="" coords="225,122,246,156,242,159,221,125"/>
+<area shape="poly" id="edge13_Node000009_Node000002" title=" " alt="" coords="390,123,397,159,395,180,387,199,368,214,338,227,264,246,262,241,336,222,365,209,383,196,390,179,392,159,384,124"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="378,124,362,158,357,155,374,122"/>
+</map>

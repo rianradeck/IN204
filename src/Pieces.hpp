@@ -1,3 +1,14 @@
+/**
+ * @file Menu.hpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Defines, for each piece, a class to handle a matrix to generate the pieces in the grid. It defines all the possible positions of each piece for roation purposes
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 // https://gamedev.stackexchange.com/questions/208367/how-is-rotation-defined-in-a-tetris-game
 
 class LinePiece : public Piece {

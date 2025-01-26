@@ -1,0 +1,48 @@
+\doxysection{Simple\+Screen.\+hpp}
+\hypertarget{_simple_screen_8hpp_source}{}\label{_simple_screen_8hpp_source}\index{C:/Users/henri/IN204/src/SimpleScreen.hpp@{C:/Users/henri/IN204/src/SimpleScreen.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Window.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }SimpleScreen\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ sf::Text\ text;}
+\DoxyCodeLine{00020\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ SimpleScreen(std::string\ text,\ \mbox{\hyperlink{class_window_manager}{WindowManager}}\ \&windowManager)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ font.loadFromFile(\textcolor{stringliteral}{"{}src/arial.ttf"{}});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this-\/>text.setFont(font);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this-\/>text.setString(text);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this-\/>text.setCharacterSize(24);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this-\/>text.setFillColor(sf::Color::White);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ sf::Vector2u\ windowSize\ =\ windowManager.getWindow().getSize();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ this-\/>text.setPosition(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ windowSize.x\ /\ 2\ -\/\ this-\/>text.getGlobalBounds().width\ /\ 2,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ windowSize.y\ /\ 2\ -\/\ this-\/>text.getGlobalBounds().height\ /\ 2}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \string~SimpleScreen()\ \{\}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ render(\mbox{\hyperlink{class_window_manager}{WindowManager}}\ \&windowManager)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ windowManager.clear();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ sf::RenderWindow\ \&window\ =\ windowManager.getWindow();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ window.draw(text);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ window.display();}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ GameState\ update(\mbox{\hyperlink{class_window_manager}{WindowManager}}\ \&windowManager)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ sf::RenderWindow\&\ window\ =\ windowManager.getWindow();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::vector<sf::Event>\ events\ =\ windowManager.updateInput();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (sf::Event\ event\ :\ events)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event.type\ ==\ sf::Event::KeyPressed\ \&\&\ event.key.code\ ==\ sf::Keyboard::Escape)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GameState::START\_SCREEN;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GameState::NO\_CHANGE;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \};}
+
+\end{DoxyCode}

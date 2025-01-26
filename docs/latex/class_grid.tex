@@ -1,0 +1,71 @@
+\doxysection{Grid Class Reference}
+\hypertarget{class_grid}{}\label{class_grid}\index{Grid@{Grid}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_grid_ae523bad76daae3de2d812461f7cbf585}\label{class_grid_ae523bad76daae3de2d812461f7cbf585} 
+{\bfseries Grid} (int width, int height, std\+::vector$<$ int $>$ cells)
+\item 
+\Hypertarget{class_grid_ab4ea2caa1c1fcba640eaa13253d25ee2}\label{class_grid_ab4ea2caa1c1fcba640eaa13253d25ee2} 
+{\bfseries Grid} (int width, int height)
+\item 
+\Hypertarget{class_grid_acee3ce61e155b70c8aff93e1aa038b9c}\label{class_grid_acee3ce61e155b70c8aff93e1aa038b9c} 
+void {\bfseries set} (int x, int y, int value)
+\item 
+\Hypertarget{class_grid_a5231030deda9b4352bee98e8daf78283}\label{class_grid_a5231030deda9b4352bee98e8daf78283} 
+int {\bfseries get} (int x, int y)
+\item 
+\Hypertarget{class_grid_a71bb3257fe068f8f514e2abeee4b1212}\label{class_grid_a71bb3257fe068f8f514e2abeee4b1212} 
+int {\bfseries get\+Width} ()
+\item 
+\Hypertarget{class_grid_a541e4f55bcdf82953ee35a0f644c8b9c}\label{class_grid_a541e4f55bcdf82953ee35a0f644c8b9c} 
+int {\bfseries get\+Height} ()
+\item 
+\Hypertarget{class_grid_a1dec5eb0f968bbe6255b9d4c65c87b0c}\label{class_grid_a1dec5eb0f968bbe6255b9d4c65c87b0c} 
+std\+::vector$<$ int $>$ {\bfseries get\+Cells} ()
+\item 
+\Hypertarget{class_grid_a56b31f3d513102702d7a3c9685e35ce3}\label{class_grid_a56b31f3d513102702d7a3c9685e35ce3} 
+sf\+::\+Vector2f {\bfseries get\+Tile\+Size} ()
+\item 
+\Hypertarget{class_grid_afa647b1742c7495153d056378add1aaf}\label{class_grid_afa647b1742c7495153d056378add1aaf} 
+void {\bfseries set\+Tile\+Size} (sf\+::\+Vector2f tile\+Size)
+\item 
+\Hypertarget{class_grid_a8f86511ed049044225a4116dd1c2a2e2}\label{class_grid_a8f86511ed049044225a4116dd1c2a2e2} 
+void {\bfseries print} ()
+\item 
+\Hypertarget{class_grid_a9df8ba58dc4191ae796ce29b26381cc8}\label{class_grid_a9df8ba58dc4191ae796ce29b26381cc8} 
+void {\bfseries render} (\mbox{\hyperlink{class_window_manager}{Window\+Manager}} \&window\+Manager, sf\+::\+Vector2f grid\+Position)
+\item 
+\Hypertarget{class_grid_af1c9384933bc7bd2a99ee75016cc45b1}\label{class_grid_af1c9384933bc7bd2a99ee75016cc45b1} 
+void {\bfseries clear\+Grid} ()
+\item 
+\Hypertarget{class_grid_a210791acd20ce0b0124f6d6fd8867a87}\label{class_grid_a210791acd20ce0b0124f6d6fd8867a87} 
+void {\bfseries draw\+Grid} (\mbox{\hyperlink{class_piece}{Piece}} \&current\+Piece)
+\item 
+\Hypertarget{class_grid_ac126afdbeada0883ba94bc05d5c9e3d3}\label{class_grid_ac126afdbeada0883ba94bc05d5c9e3d3} 
+void {\bfseries update} (\mbox{\hyperlink{class_piece}{Piece}} \&current\+Piece)
+\item 
+\Hypertarget{class_grid_a33bda9f5641b34a081d6933693fb1754}\label{class_grid_a33bda9f5641b34a081d6933693fb1754} 
+void {\bfseries draw\+Piece} (\mbox{\hyperlink{class_piece}{Piece}} piece)
+\item 
+\Hypertarget{class_grid_a41cfee6fc1a8d9570b88ce87e1f338fa}\label{class_grid_a41cfee6fc1a8d9570b88ce87e1f338fa} 
+void {\bfseries freeze\+Piece} (\mbox{\hyperlink{class_piece}{Piece}} piece)
+\item 
+\Hypertarget{class_grid_ad126fe0f1a0c04c51010cb8dbafe15fe}\label{class_grid_ad126fe0f1a0c04c51010cb8dbafe15fe} 
+void {\bfseries draw\+Tile} (std\+::tuple$<$ int, int, int $>$ tile)
+\item 
+\Hypertarget{class_grid_ac2f51ce9f8a4b0e1e6b34850c1efb851}\label{class_grid_ac2f51ce9f8a4b0e1e6b34850c1efb851} 
+bool {\bfseries can\+Change} (\mbox{\hyperlink{class_piece}{Piece}} \&current\+Piece, Direction direction)
+\item 
+\Hypertarget{class_grid_a0e2f3599009f68408bcad76de1b3e2f9}\label{class_grid_a0e2f3599009f68408bcad76de1b3e2f9} 
+int {\bfseries clear\+Full\+Lines} ()
+\item 
+\Hypertarget{class_grid_a47ad2217c337893c2a664284f78b96fb}\label{class_grid_a47ad2217c337893c2a664284f78b96fb} 
+void {\bfseries Block\+Lines} (int n\+\_\+lines)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/henri/\+IN204/src/\mbox{\hyperlink{_grid_8hpp}{Grid.\+hpp}}\item 
+C\+:/\+Users/henri/\+IN204/src/\mbox{\hyperlink{_grid_8cpp}{Grid.\+cpp}}\end{DoxyCompactItemize}

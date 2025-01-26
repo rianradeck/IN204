@@ -1,3 +1,14 @@
+/**
+ * @file Menu.hpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Handles the current state of the game and leads the appropriated modifications
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "StateManager.hpp"
 
 sf::RenderWindow& StateManager::getWindow() { return windowManager.getWindow(); }

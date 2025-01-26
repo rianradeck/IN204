@@ -1,0 +1,69 @@
+\doxysection{JPiece Class Reference}
+\hypertarget{class_j_piece}{}\label{class_j_piece}\index{JPiece@{JPiece}}
+
+
+Inheritance diagram for JPiece\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{class_j_piece__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for JPiece\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{class_j_piece__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_j_piece_ac566ffc29d4e9c5e46e3b27640994be6}\label{class_j_piece_ac566ffc29d4e9c5e46e3b27640994be6} 
+{\bfseries JPiece} (sf\+::\+Vector2u position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_piece}{Piece}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Piece} (sf\+::\+Vector2u anchor\+Position, Direction rotation, Piece\+Kind kind)
+\item 
+{\bfseries Piece} (sf\+::\+Vector2u anchor\+Position, Piece\+Kind kind)
+\item 
+void {\bfseries move} (Direction direction)
+\item 
+void {\bfseries rotate} ()
+\item 
+bool {\bfseries is\+Mask\+Filled} (int x, int y)
+\item 
+void {\bfseries set\+Position} (sf\+::\+Vector2i position)
+\item 
+Piece\+Kind {\bfseries get\+Kind} ()
+\item 
+sf\+::\+Vector2i {\bfseries get\+Position} ()
+\item 
+std\+::vector$<$ sf\+::\+Vector2u $>$ {\bfseries get\+Grid\+Positions} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_piece}{Piece}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries set\+Masks} (const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&new\+Masks)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_piece}{Piece}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ {\bfseries masks}
+\item 
+std\+::vector$<$ bool $>$ {\bfseries mask}
+\item 
+int {\bfseries current\+Mask} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/henri/\+IN204/src/Pieces.\+hpp\end{DoxyCompactItemize}

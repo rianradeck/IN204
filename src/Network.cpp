@@ -1,3 +1,14 @@
+/**
+ * @file Menu.hpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Handles network communication between the players, just as receiving and sending packets through the established network connection
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "Network.hpp"
 #include <iostream>
 
@@ -31,7 +42,7 @@ int NetworkManager::accept() {
 
 int NetworkManager::connectToServer(sf::IpAddress address) {
     if ((connectionStatus = socket.connect(address, serverPort)) != sf::Socket::Done) {
-        // std::cerr << "Error connecting to server" << std::endl;
+        std::cerr << "Error connecting to server" << std::endl;
         return -1;
     }
     std::cout << "Connected to server" << std::endl;

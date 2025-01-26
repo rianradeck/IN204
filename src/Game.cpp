@@ -1,3 +1,14 @@
+/**
+ * @file Game.cpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Main game's file, handles all the steps of the game
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "Game.hpp"
 
 #include <SFML/Graphics.hpp>

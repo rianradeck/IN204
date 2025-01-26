@@ -1,3 +1,14 @@
+/**
+ * @file Menu.cpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Handles the user's menu choice and leads him to the right path
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "Menu.hpp"
 #include <iostream>
 

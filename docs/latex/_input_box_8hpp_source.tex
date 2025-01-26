@@ -1,0 +1,71 @@
+\doxysection{Input\+Box.\+hpp}
+\hypertarget{_input_box_8hpp_source}{}\label{_input_box_8hpp_source}\index{C:/Users/henri/IN204/src/InputBox.hpp@{C:/Users/henri/IN204/src/InputBox.hpp}}
+\mbox{\hyperlink{_input_box_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }InputBox\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ sf::RectangleShape\ box;}
+\DoxyCodeLine{00018\ \ \ \ \ sf::Text\ text;}
+\DoxyCodeLine{00019\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ isActive;}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ input;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ InputBox(sf::Vector2f\ position,\ sf::Vector2f\ size)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ box.setPosition(position);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ box.setSize(size);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ box.setFillColor(sf::Color::White);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ box.setOutlineColor(sf::Color::Black);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ box.setOutlineThickness(1);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}src/arial.ttf"{}}))\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ error}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ text.setFont(font);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ text.setPosition(position);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ text.setCharacterSize(24);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ text.setFillColor(sf::Color::Black);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ isActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ input\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ render(sf::RenderWindow\ \&window)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ window.draw(box);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ window.draw(text);}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ handleEvent(sf::Event\ event)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event.type\ ==\ sf::Event::MouseButtonPressed)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (box.getGlobalBounds().contains(event.mouseButton.x,\ event.mouseButton.y))\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isActive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isActive\ \&\&\ event.type\ ==\ sf::Event::TextEntered)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event.text.unicode\ ==\ \textcolor{charliteral}{'\(\backslash\)b'}\ \&\&\ !input.empty())\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input.pop\_back();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (event.text.unicode\ <\ 128\ \&\&\ event.text.unicode\ !=\ \textcolor{charliteral}{'\(\backslash\)b'})\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\ +=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\textcolor{keyword}{event}.text.unicode);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ text.setString(input);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ std::string\ getInput()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ input;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ isFilled()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !input.empty();}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \};}
+
+\end{DoxyCode}

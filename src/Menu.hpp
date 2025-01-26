@@ -1,3 +1,14 @@
+/**
+ * @file Menu.hpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Define design aspects of the initial menu
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include <SFML/Graphics.hpp>
 #include <string>
 

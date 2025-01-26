@@ -1,0 +1,52 @@
+\doxysection{Grid.\+hpp}
+\hypertarget{_grid_8hpp_source}{}\label{_grid_8hpp_source}\index{C:/Users/henri/IN204/src/Grid.hpp@{C:/Users/henri/IN204/src/Grid.hpp}}
+\mbox{\hyperlink{_grid_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}PieceGenerator.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Window.hpp"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }Grid\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ width,\ height;}
+\DoxyCodeLine{00022\ \ \ \ \ sf::Vector2f\ tileSize\ =\ \{30,\ 30\};}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<int>\ cells;}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<std::tuple<int,\ int,\ int>>\ staticTiles;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ Grid(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ std::vector<int>\ cells)\ :\ width(width),\ height(height),\ cells(cells),\ staticTiles(\{\})\ \{\};}
+\DoxyCodeLine{00028\ \ \ \ \ Grid(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\ :\ width(width),\ height(height),\ staticTiles(\{\})\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ cells\ =\ std::vector<int>(width\ *\ height);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ width\ *\ height;\ i++)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ cells[i]\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \string~Grid()\ \{\};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ set(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ get(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth()\ \{\ \textcolor{keywordflow}{return}\ width;\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight()\ \{\ \textcolor{keywordflow}{return}\ height;\ \}}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<int>\ getCells()\ \{\ \textcolor{keywordflow}{return}\ cells;\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ sf::Vector2f\ getTileSize()\ \{\ \textcolor{keywordflow}{return}\ tileSize;\ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ setTileSize(sf::Vector2f\ tileSize)\ \{\ this-\/>tileSize\ =\ tileSize;\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ print();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ render(\mbox{\hyperlink{class_window_manager}{WindowManager}}\ \&windowManager,\ sf::Vector2f\ gridPosition);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ clearGrid();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGrid(\mbox{\hyperlink{class_piece}{Piece}}\ \&currentPiece);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ update(\mbox{\hyperlink{class_piece}{Piece}}\ \&currentPiece);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ drawPiece(\mbox{\hyperlink{class_piece}{Piece}}\ piece);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ freezePiece(\mbox{\hyperlink{class_piece}{Piece}}\ piece);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ drawTile(std::tuple<int,\ int,\ int>\ tile);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ canChange(\mbox{\hyperlink{class_piece}{Piece}}\ \&currentPiece,\ Direction\ direction);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ clearFullLines();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ BlockLines(\textcolor{keywordtype}{int}\ n\_lines);}
+\DoxyCodeLine{00055\ \};}
+
+\end{DoxyCode}

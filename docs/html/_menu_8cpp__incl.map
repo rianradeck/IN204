@@ -1,0 +1,28 @@
+<map id="C:/Users/henri/IN204/src/Menu.cpp" name="C:/Users/henri/IN204/src/Menu.cpp">
+<area shape="rect" id="Node000001" title="Handles the user&#39;s menu choice and leads him to the right path." alt="" coords="336,5,481,48"/>
+<area shape="rect" id="Node000002" href="$_menu_8hpp.html" title="Define design aspects of the initial menu." alt="" coords="264,96,342,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="383,51,333,88,330,84,380,46"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="493,245,564,272"/>
+<area shape="poly" id="edge16_Node000001_Node000008" title=" " alt="" coords="422,47,517,230,513,233,417,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="188,320,325,347"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,116,200,122,127,132,61,149,37,160,21,172,9,196,12,218,27,238,51,257,82,274,118,290,189,313,187,318,116,294,80,279,48,262,23,242,7,220,4,195,17,169,34,155,59,144,126,127,199,116,263,110"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="249,245,302,272"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="303,124,283,230,278,229,298,123"/>
+<area shape="rect" id="Node000005" href="$_window_8hpp_source.html" title=" " alt="" coords="377,245,469,272"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="343,114,395,132,420,148,440,169,446,185,447,201,439,232,434,231,442,201,441,186,436,172,417,152,393,136,342,119"/>
+<area shape="rect" id="Node000007" href="$_button_8hpp.html" title="Definition of the class Button." alt="" coords="341,171,425,197"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="319,121,360,158,357,162,315,125"/>
+<area shape="rect" id="Node000009" href="$_game_state_8hpp.html" title="Definition of the possible states of the game." alt="" coords="31,171,143,197"/>
+<area shape="poly" id="edge12_Node000002_Node000009" title=" " alt="" coords="266,126,140,168,138,163,265,121"/>
+<area shape="rect" id="Node000010" href="$_input_box_8hpp.html" title="Sets definition of text field to type the IP Address for multiplayer." alt="" coords="167,171,266,197"/>
+<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="290,125,245,163,241,159,286,121"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="395,275,301,316,298,311,393,270"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="395,320,452,347"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="426,273,426,304,421,304,421,273"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="376,200,316,274,282,310,278,307,312,270,372,196"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="366,200,308,238,305,234,363,196"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="392,197,411,230,407,233,388,199"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="410,195,491,236,488,240,407,200"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="222,197,239,271,250,305,245,306,234,273,216,198"/>
+<area shape="poly" id="edge15_Node000010_Node000004" title=" " alt="" coords="229,196,258,231,253,235,225,200"/>
+</map>

@@ -1,3 +1,14 @@
+/**
+ * @file Menu.hpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief Defines the class for the state management
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #pragma once
 
 #include "GameState.hpp"

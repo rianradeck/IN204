@@ -1,3 +1,8 @@
+/**
+ * @brief Simple document to store enumerated constants
+ * 
+ */
+
 enum PieceKind {
     NONE = 0,
     LINE = 1,

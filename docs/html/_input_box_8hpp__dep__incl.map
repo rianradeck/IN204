@@ -1,0 +1,11 @@
+<map id="C:/Users/henri/IN204/src/InputBox.hpp" name="C:/Users/henri/IN204/src/InputBox.hpp">
+<area shape="rect" id="Node000001" title="Sets definition of text field to type the IP Address for multiplayer." alt="" coords="92,5,237,48"/>
+<area shape="rect" id="Node000002" href="$_menu_8hpp.html" title="Define design aspects of the initial menu." alt="" coords="92,96,237,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,64,167,96,162,96,162,64"/>
+<area shape="rect" id="Node000003" href="$_menu_8cpp.html" title="Handles the user&#39;s menu choice and leads him to the right path." alt="" coords="5,187,151,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,152,100,188,96,184,132,148"/>
+<area shape="rect" id="Node000004" href="$_state_manager_8hpp_source.html" title=" " alt="" coords="175,187,328,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="197,148,233,184,229,188,193,152"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="179,277,324,320"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="254,245,254,277,249,277,249,245"/>
+</map>

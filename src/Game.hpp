@@ -1,3 +1,14 @@
+/**
+ * @file Game.hpp
+ * @author Rian Radeck and Henrique Gundlach
+ * @brief File for main game's file class definitions
+ * @version 0.1
+ * @date 2025-01-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include <SFML/Graphics.hpp>
 
 #include "Grid.hpp"

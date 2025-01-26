@@ -1,0 +1,221 @@
+\doxysection{Pieces.\+hpp}
+\hypertarget{_pieces_8hpp_source}{}\label{_pieces_8hpp_source}\index{C:/Users/henri/IN204/src/Pieces.hpp@{C:/Users/henri/IN204/src/Pieces.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ https://gamedev.stackexchange.com/questions/208367/how-\/is-\/rotation-\/defined-\/in-\/a-\/tetris-\/game}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }LinePiece\ :\ \textcolor{keyword}{public}\ Piece\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<std::vector<bool>>\ masks\ =\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 1,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ LinePiece()\ :\ LinePiece(\{0,\ 0\})\ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ LinePiece(sf::Vector2u\ position)\ :\ Piece(position,\ PieceKind::LINE)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ setMasks(masks);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }SquarePiece\ :\ \textcolor{keyword}{public}\ Piece\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<std::vector<bool>>\ masks\ =\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ SquarePiece()\ :\ SquarePiece(\{0,\ 0\})\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ SquarePiece(sf::Vector2u\ position)\ :\ Piece(position,\ PieceKind::SQUARE)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ setMasks(masks);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }JPiece\ :\ \textcolor{keyword}{public}\ Piece\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<std::vector<bool>>\ masks\ =\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00090\ \ \ \ \ JPiece()\ :\ JPiece(\{0,\ 0\})\ \{\}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ JPiece(sf::Vector2u\ position)\ :\ Piece(position,\ PieceKind::J)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ setMasks(masks);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }LPiece\ :\ \textcolor{keyword}{public}\ Piece\ \{}
+\DoxyCodeLine{00099\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00100\ \ \ \ \ std::vector<std::vector<bool>>\ masks\ =\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \};}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00127\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00128\ \ \ \ \ LPiece()\ :\ LPiece(\{0,\ 0\})\ \{\}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ LPiece(sf::Vector2u\ position)\ :\ Piece(position,\ PieceKind::L)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ setMasks(masks);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{class\ }SPiece\ :\ \textcolor{keyword}{public}\ Piece\ \{}
+\DoxyCodeLine{00137\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00138\ \ \ \ \ std::vector<std::vector<bool>>\ masks\ =\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \};}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00153\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00154\ \ \ \ \ SPiece()\ :\ SPiece(\{0,\ 0\})\ \{\}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ SPiece(sf::Vector2u\ position)\ :\ Piece(position,\ PieceKind::S)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ setMasks(masks);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{class\ }ZPiece\ :\ \textcolor{keyword}{public}\ Piece\ \{}
+\DoxyCodeLine{00163\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00164\ \ \ \ \ std::vector<std::vector<bool>>\ masks\ =\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \};}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00179\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00180\ \ \ \ \ ZPiece()\ :\ ZPiece(\{0,\ 0\})\ \{\}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ ZPiece(sf::Vector2u\ position)\ :\ Piece(position,\ PieceKind::Z)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ setMasks(masks);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{class\ }TPiece\ :\ \textcolor{keyword}{public}\ Piece\ \{}
+\DoxyCodeLine{00189\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00190\ \ \ \ \ std::vector<std::vector<bool>>\ masks\ =\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 1,\ 0,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 1,\ 0,\ 0,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \};}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMask\ =\ 0;}
+\DoxyCodeLine{00217\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00218\ \ \ \ \ TPiece()\ :\ TPiece(\{0,\ 0\})\ \{\}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ TPiece(sf::Vector2u\ position)\ :\ Piece(position,\ PieceKind::T)\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ setMasks(masks);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ mask\ =\ masks[0];}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \};}
+
+\end{DoxyCode}

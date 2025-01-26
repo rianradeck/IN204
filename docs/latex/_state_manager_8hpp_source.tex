@@ -1,0 +1,38 @@
+\doxysection{State\+Manager.\+hpp}
+\hypertarget{_state_manager_8hpp_source}{}\label{_state_manager_8hpp_source}\index{C:/Users/henri/IN204/src/StateManager.hpp@{C:/Users/henri/IN204/src/StateManager.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_state_8hpp}{GameState.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_8hpp}{Game.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_menu_8hpp}{Menu.hpp}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}SimpleScreen.hpp"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }StateManager\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ GameState\ state;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_network_manager}{NetworkManager}}\ networkManager;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}\ *game;}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_menu}{Menu}}\ menu;}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_window_manager}{WindowManager}}\ windowManager;}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}\ host\ =\ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}(\textcolor{stringliteral}{"{}Waiting\ for\ connection"{}},\ windowManager);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}\ join\ =\ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}(\textcolor{stringliteral}{"{}Searching\ for\ server"{}},\ windowManager);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}\ gameover\ =\ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}(\textcolor{stringliteral}{"{}Game\ Over"{}},\ windowManager);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}\ youWon\ =\ \mbox{\hyperlink{class_simple_screen}{SimpleScreen}}(\textcolor{stringliteral}{"{}You\ Won"{}},\ windowManager);}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ StateManager()\ :\ state(GameState::START\_SCREEN)\ \{\}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ GameState\ getCurrentState()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ state;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ changeState(GameState\ newState);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ sf::RenderWindow\&\ getWindow();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ isRunning();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ render();}
+\DoxyCodeLine{00041\ \};}
+
+\end{DoxyCode}
