@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * @file Menu.hpp
  * @author Rian Radeck and Henrique Gundlach
@@ -9,9 +8,7 @@
  * @copyright Copyright (c) 2025
  * 
  */
-=======
 #include <chrono>
->>>>>>> d147d2f80ec33e148cb0a881477c2e2404b77309
 
 #include "StateManager.hpp"
 
