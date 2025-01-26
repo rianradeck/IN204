@@ -27,6 +27,7 @@ public:
     int getWidth() { return width; }
     int getHeight() { return height; }
     sf::Vector2f getTileSize() { return tileSize; }
+    void setTileSize(sf::Vector2f tileSize) { this->tileSize = tileSize; }
     void print();
     void render(WindowManager &windowManager, sf::Vector2f gridPosition);
 

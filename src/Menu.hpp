@@ -6,7 +6,8 @@
 
 class Menu {
 private:
-    Button playButton = Button({100, 100}, {100, 50}, sf::Color::Green, "Play");
+    Button hostButton = Button({100, 100}, {100, 50}, sf::Color::Green, "Host");
+    Button joinButton = Button({100, 200}, {100, 50}, sf::Color::Green, "Join");
 public:
     Menu() {}
     ~Menu() {}

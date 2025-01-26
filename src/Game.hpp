@@ -4,7 +4,7 @@
 
 class Game {
 private:
-    Grid grid = Grid(10, 22), nextGrid = Grid(4, 4);
+    Grid grid = Grid(10, 22), nextGrid = Grid(4, 4), opponentGrid = Grid(10, 22);
     unsigned int score = 0;
     PieceGenerator pieceGenerator;
     Piece currentPiece, nextPiece;
@@ -15,6 +15,7 @@ private:
 public:
     Game() {
         lastTick = clock.getElapsedTime();
+        opponentGrid.setTileSize({10, 10});
     };
     ~Game() {};
     void print();

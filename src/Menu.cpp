@@ -4,7 +4,8 @@
 void Menu::render(WindowManager &windowManager) {
     windowManager.clear();
     
-    playButton.render(windowManager);
+    hostButton.render(windowManager);
+    joinButton.render(windowManager);
 
     windowManager.display();
 }
@@ -15,9 +16,13 @@ GameState Menu::update(WindowManager &windowManager) {
     for (auto event : userInput) {
         if (event.type == sf::Event::MouseButtonPressed) {
             std::cout << "Mouse button pressed" << std::endl;
-            if (playButton.isClicked(sf::Mouse::getPosition(window))) {
-                std::cout << "Play button clicked" << std::endl;
-                return GameState::PLAYING;
+            if (hostButton.isClicked(sf::Mouse::getPosition(window))) {
+                std::cout << "Host button clicked" << std::endl;
+                return GameState::WAITING_FOR_CONNECTION;
+            }
+            if (joinButton.isClicked(sf::Mouse::getPosition(window))) {
+                std::cout << "Join button clicked" << std::endl;
+                return GameState::SEARCHING_FOR_SERVER;
             }
         }
     }

@@ -97,5 +97,14 @@ void Game::render(WindowManager &windowManager) {
             windowSize.y / 2 - nextGrid.getHeight() / 2 * tileSize.y
         )
     );
+
+    tileSize = opponentGrid.getTileSize();
+    opponentGrid.render(
+        windowManager,
+        sf::Vector2f(
+            windowSize.x / 2 - grid.getWidth() / 2 * tileSize.x - 50 - opponentGrid.getWidth() * tileSize.x,
+            windowSize.y / 2 - opponentGrid.getHeight() / 2 * tileSize.y
+        )
+    );
     windowManager.display();
 }
