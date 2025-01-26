@@ -68,10 +68,11 @@ bool Game::handlePieceChange() {
 bool Game::networkPool(NetworkManager &networkManager) {
     sf::Packet packet;
     networkManager.receive(packet);
-    std::string data;
+    std::string data = "";
     for(int i = 0; i < packet.getDataSize(); i++) {
         data += ((char*)packet.getData())[i];
     }
+    // std::cout << "Received: " << data << std::endl;
     if (data.find("Game Over") != std::string::npos)
         return false;
     if (data.find("LINES") != std::string::npos) {
@@ -98,6 +99,7 @@ GameState Game::update(WindowManager &windowManager, NetworkManager &networkMana
         sf::Packet packet;
         packet << "Game Over";
         networkManager.send(packet);
+        sf::sleep(sf::seconds(1));
         return GameState::GAME_OVER;
     }
 
