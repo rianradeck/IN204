@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file Pieces.hpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Defines, for each piece, a class to handle a matrix to generate the pieces in the grid. It defines all the possible positions of each piece for roation purposes
  * @version 0.1

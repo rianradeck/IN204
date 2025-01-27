@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file SimpleScreen.hpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Defines a simple screen with a text to inform the user of the current status of the game
  * @version 0.1

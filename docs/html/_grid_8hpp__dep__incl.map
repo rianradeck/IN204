@@ -2,12 +2,14 @@
 <area shape="rect" id="Node000001" title="Definition of main grid&#39;s controller class." alt="" coords="176,5,321,48"/>
 <area shape="rect" id="Node000002" href="$_game_8hpp.html" title="File for main game&#39;s file class definitions." alt="" coords="92,96,237,139"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,61,186,98,182,94,217,58"/>
-<area shape="rect" id="Node000006" href="$_grid_8cpp.html" title="Defines all the functions concerning the game&#39;s grid, as full lines, block enemy&#39;s lines and the poss..." alt="" coords="261,96,407,139"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="281,58,316,94,312,98,277,61"/>
+<area shape="rect" id="Node000007" href="$_grid_8cpp.html" title="Defines all the functions concerning the game&#39;s grid, as full lines, block enemy&#39;s lines and the poss..." alt="" coords="261,96,407,139"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="281,58,316,94,312,98,277,61"/>
 <area shape="rect" id="Node000003" href="$_game_8cpp.html" title="Main game&#39;s file, handles all the steps of the game." alt="" coords="5,187,151,229"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,152,100,188,96,184,132,148"/>
-<area shape="rect" id="Node000004" href="$_state_manager_8hpp_source.html" title=" " alt="" coords="175,187,328,229"/>
+<area shape="rect" id="Node000004" href="$_state_manager_8hpp.html" title="Defines the class for the state management." alt="" coords="175,187,328,229"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="197,148,233,184,229,188,193,152"/>
-<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="179,277,324,320"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="254,245,254,277,249,277,249,245"/>
+<area shape="rect" id="Node000005" href="$_state_manager_8cpp.html" title="Handles the current state of the game and leads the appropriated modifications." alt="" coords="88,277,241,320"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,242,187,279,183,275,219,239"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="265,277,411,320"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="284,239,320,275,316,279,280,242"/>
 </map>

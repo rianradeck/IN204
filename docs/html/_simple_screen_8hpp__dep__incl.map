@@ -1,0 +1,9 @@
+<map id="C:/Users/henri/IN204/src/SimpleScreen.hpp" name="C:/Users/henri/IN204/src/SimpleScreen.hpp">
+<area shape="rect" id="Node000001" title="Defines a simple screen with a text to inform the user of the current status of the game." alt="" coords="92,5,245,48"/>
+<area shape="rect" id="Node000002" href="$_state_manager_8hpp.html" title="Defines the class for the state management." alt="" coords="92,96,245,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,64,171,96,166,96,166,64"/>
+<area shape="rect" id="Node000003" href="$_state_manager_8cpp.html" title="Handles the current state of the game and leads the appropriated modifications." alt="" coords="5,187,159,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,152,104,188,100,184,136,148"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="183,187,328,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="201,148,237,184,233,188,197,152"/>
+</map>

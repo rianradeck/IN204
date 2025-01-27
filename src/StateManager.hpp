@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file StateManager.hpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Defines the class for the state management
  * @version 0.1

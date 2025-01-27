@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file PieceGenerator.hpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Class' definition for piece generator handler
  * @version 0.1

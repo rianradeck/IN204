@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file StateManager.cpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Handles the current state of the game and leads the appropriated modifications
  * @version 0.1

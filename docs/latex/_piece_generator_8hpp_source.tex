@@ -1,37 +1,38 @@
 \doxysection{Piece\+Generator.\+hpp}
 \hypertarget{_piece_generator_8hpp_source}{}\label{_piece_generator_8hpp_source}\index{C:/Users/henri/IN204/src/PieceGenerator.hpp@{C:/Users/henri/IN204/src/PieceGenerator.hpp}}
-
+\mbox{\hyperlink{_piece_generator_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00011\ }
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <random>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Piece.hpp"{}}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }PieceGenerator\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ seed;}
-\DoxyCodeLine{00020\ \ \ \ \ std::mt19937\ randomGenerator;}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ sf::Vector2u\ defaultPosition\ =\ \{4,\ 0\};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024\ \ \ \ \ PieceGenerator(\textcolor{keywordtype}{int}\ seed)\ :\ seed(seed)\ \{\ randomGenerator\ =\ std::mt19937(seed);\ \};}
-\DoxyCodeLine{00025\ \ \ \ \ PieceGenerator()\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ seed\ =\ 42;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ randomGenerator\ =\ std::mt19937(seed);}
-\DoxyCodeLine{00028\ \ \ \ \ \};}
-\DoxyCodeLine{00029\ \ \ \ \ \string~PieceGenerator()\ \{\};}
-\DoxyCodeLine{00030\ \ \ \ \ std::unique\_ptr<Piece>\ generatePiece();}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ PieceGenerator\&\ operator=(const\ PieceGenerator\&\ other)\ \{}}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ if\ (this\ ==\ \&other)\ \{}}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ return\ *this;}}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}}}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ this-\/>seed\ =\ other.seed;}}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ this-\/>randomGenerator\ =\ other.randomGenerator;}}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ return\ *this;}}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ \}}}
-\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_piece_8hpp}{Piece.hpp}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }PieceGenerator\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ seed;}
+\DoxyCodeLine{00021\ \ \ \ \ std::mt19937\ randomGenerator;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ sf::Vector2u\ defaultPosition\ =\ \{4,\ 0\};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ PieceGenerator(\textcolor{keywordtype}{int}\ seed)\ :\ seed(seed)\ \{\ randomGenerator\ =\ std::mt19937(seed);\ \};}
+\DoxyCodeLine{00026\ \ \ \ \ PieceGenerator()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ seed\ =\ 42;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ randomGenerator\ =\ std::mt19937(seed);}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \ \ \ \ \string~PieceGenerator()\ \{\};}
+\DoxyCodeLine{00031\ \ \ \ \ std::unique\_ptr<Piece>\ generatePiece();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ PieceGenerator\&\ operator=(const\ PieceGenerator\&\ other)\ \{}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ if\ (this\ ==\ \&other)\ \{}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ return\ *this;}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ this-\/>seed\ =\ other.seed;}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ this-\/>randomGenerator\ =\ other.randomGenerator;}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ return\ *this;}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00041\ \};}
 
 \end{DoxyCode}

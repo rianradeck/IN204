@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file Piece.hpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Definition of class for pieces handler
  * @version 0.1

@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file Network.hpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Definition of class for network handlers
  * @version 0.1

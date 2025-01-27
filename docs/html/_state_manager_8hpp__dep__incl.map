@@ -1,0 +1,7 @@
+<map id="C:/Users/henri/IN204/src/StateManager.hpp" name="C:/Users/henri/IN204/src/StateManager.hpp">
+<area shape="rect" id="Node000001" title="Defines the class for the state management." alt="" coords="92,5,245,48"/>
+<area shape="rect" id="Node000002" href="$_state_manager_8cpp.html" title="Handles the current state of the game and leads the appropriated modifications." alt="" coords="5,96,159,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,61,104,98,100,94,136,57"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="183,96,328,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,57,237,94,233,98,197,61"/>
+</map>

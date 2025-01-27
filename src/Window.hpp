@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file Window.hpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Defines the configurations and the class of the game's window, as size and background image
  * @version 0.1

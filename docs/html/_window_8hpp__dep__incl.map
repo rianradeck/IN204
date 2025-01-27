@@ -1,0 +1,32 @@
+<map id="C:/Users/henri/IN204/src/Window.hpp" name="C:/Users/henri/IN204/src/Window.hpp">
+<area shape="rect" id="Node000001" title="Defines the configurations and the class of the game&#39;s window, as size and background image." alt="" coords="289,5,435,48"/>
+<area shape="rect" id="Node000002" href="$_button_8hpp.html" title="Definition of the class Button." alt="" coords="64,96,209,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="296,57,191,98,189,93,294,52"/>
+<area shape="rect" id="Node000004" href="$_menu_8hpp.html" title="Define design aspects of the initial menu." alt="" coords="175,187,320,229"/>
+<area shape="poly" id="edge13_Node000001_Node000004" title=" " alt="" coords="314,59,293,77,276,97,265,120,258,143,251,187,246,186,252,142,260,118,272,95,290,73,311,55"/>
+<area shape="rect" id="Node000009" href="$_grid_8hpp.html" title="Definition of main grid&#39;s controller class." alt="" coords="463,96,608,139"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="417,53,496,93,494,98,415,58"/>
+<area shape="rect" id="Node000013" href="$_simple_screen_8hpp.html" title="Defines a simple screen with a text to inform the user of the current status of the game." alt="" coords="285,96,439,139"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="365,64,365,96,359,96,359,64"/>
+<area shape="rect" id="Node000014" href="$_window_8cpp.html" title="Handles the window configuration." alt="" coords="632,96,777,139"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="450,48,632,95,631,100,449,53"/>
+<area shape="rect" id="Node000003" href="$_button_8cpp.html" title="This file sets the design definitions for the buttons in the game." alt="" coords="5,187,151,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,153,94,188,89,185,112,150"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="176,146,223,184,220,188,173,151"/>
+<area shape="rect" id="Node000005" href="$_menu_8cpp.html" title="Handles the user&#39;s menu choice and leads him to the right path." alt="" coords="145,277,291,320"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="238,245,227,278,222,276,233,243"/>
+<area shape="rect" id="Node000006" href="$_state_manager_8hpp.html" title="Defines the class for the state management." alt="" coords="315,277,468,320"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="296,236,359,275,356,279,293,240"/>
+<area shape="rect" id="Node000007" href="$_state_manager_8cpp.html" title="Handles the current state of the game and leads the appropriated modifications." alt="" coords="228,368,381,411"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="363,333,327,370,323,366,359,329"/>
+<area shape="rect" id="Node000008" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="405,368,551,411"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="424,329,460,366,456,370,420,333"/>
+<area shape="rect" id="Node000010" href="$_game_8hpp.html" title="File for main game&#39;s file class definitions." alt="" coords="569,187,715,229"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="573,146,619,184,615,188,570,151"/>
+<area shape="rect" id="Node000012" href="$_grid_8cpp.html" title="Defines all the functions concerning the game&#39;s grid, as full lines, block enemy&#39;s lines and the poss..." alt="" coords="400,187,545,229"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="514,153,489,188,485,185,510,150"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="570,237,451,279,449,274,568,232"/>
+<area shape="rect" id="Node000011" href="$_game_8cpp.html" title="Main game&#39;s file, handles all the steps of the game." alt="" coords="569,277,715,320"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="645,245,645,277,639,277,639,245"/>
+<area shape="poly" id="edge15_Node000013_Node000006" title=" " alt="" coords="370,154,391,277,385,278,365,155"/>
+</map>

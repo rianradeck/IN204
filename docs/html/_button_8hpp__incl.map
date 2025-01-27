@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,51,102,71,82,97,73,126,73,155,67,155,68,125,77,95,98,67,125,46"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="91,96,145,123"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,50,136,84,131,81,151,47"/>
-<area shape="rect" id="Node000004" href="$_window_8hpp_source.html" title=" " alt="" coords="169,96,262,123"/>
+<area shape="rect" id="Node000004" href="$_window_8hpp.html" title="Defines the configurations and the class of the game&#39;s window, as size and background image." alt="" coords="169,96,262,123"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,47,202,81,197,84,176,50"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="285,96,356,123"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="207,46,284,86,282,91,205,51"/>

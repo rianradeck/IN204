@@ -1,0 +1,12 @@
+<map id="C:/Users/henri/IN204/src/SimpleScreen.hpp" name="C:/Users/henri/IN204/src/SimpleScreen.hpp">
+<area shape="rect" id="Node000001" title="Defines a simple screen with a text to inform the user of the current status of the game." alt="" coords="41,5,195,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,171,143,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,50,85,72,73,97,68,127,71,156,65,156,63,127,67,95,80,69,97,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="82,96,154,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,49,121,80,115,80,115,49"/>
+<area shape="rect" id="Node000004" href="$_window_8hpp.html" title="Defines the configurations and the class of the game&#39;s window, as size and background image." alt="" coords="177,96,270,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,46,196,84,193,88,144,51"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="198,126,115,166,113,161,196,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="195,171,252,197"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="226,123,226,155,221,155,221,123"/>
+</map>

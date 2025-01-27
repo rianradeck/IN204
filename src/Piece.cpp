@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file Piece.cpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Handles movements of pieces
  * @version 0.1

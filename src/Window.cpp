@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file Window.cpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Handles the window configuration
  * @version 0.1

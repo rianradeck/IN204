@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file PieceGenerator.cpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Handles the randomic generation of pieces throughout the game
  * @version 0.1

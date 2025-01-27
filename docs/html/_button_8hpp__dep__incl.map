@@ -6,8 +6,10 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,58,230,94,226,98,191,61"/>
 <area shape="rect" id="Node000004" href="$_menu_8cpp.html" title="Handles the user&#39;s menu choice and leads him to the right path." alt="" coords="88,187,233,229"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,152,183,188,179,184,215,148"/>
-<area shape="rect" id="Node000005" href="$_state_manager_8hpp_source.html" title=" " alt="" coords="257,187,411,229"/>
+<area shape="rect" id="Node000005" href="$_state_manager_8hpp.html" title="Defines the class for the state management." alt="" coords="257,187,411,229"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="280,148,316,184,312,188,276,152"/>
-<area shape="rect" id="Node000006" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="261,277,407,320"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="337,245,337,277,331,277,331,245"/>
+<area shape="rect" id="Node000006" href="$_state_manager_8cpp.html" title="Handles the current state of the game and leads the appropriated modifications." alt="" coords="171,277,324,320"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="305,242,269,279,265,275,302,239"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="348,277,493,320"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="366,239,403,275,399,279,363,242"/>
 </map>

@@ -1,5 +1,5 @@
 /**
- * @file Menu.hpp
+ * @file Network.cpp
  * @author Rian Radeck and Henrique Gundlach
  * @brief Handles network communication between the players, just as receiving and sending packets through the established network connection
  * @version 0.1

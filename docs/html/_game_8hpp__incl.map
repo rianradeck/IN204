@@ -1,34 +1,36 @@
 <map id="C:/Users/henri/IN204/src/Game.hpp" name="C:/Users/henri/IN204/src/Game.hpp">
-<area shape="rect" id="Node000001" title="File for main game&#39;s file class definitions." alt="" coords="173,5,319,48"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,320,143,347"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,51,128,100,87,134,51,172,31,198,17,220,12,243,18,271,30,291,46,308,42,312,26,294,13,273,6,243,12,218,26,194,47,169,83,130,125,96,204,46"/>
-<area shape="rect" id="Node000003" href="$_grid_8hpp.html" title="Definition of main grid&#39;s controller class." alt="" coords="158,96,228,123"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,50,212,84,207,81,230,47"/>
-<area shape="rect" id="Node000012" href="$_network_8hpp_source.html" title=" " alt="" coords="252,96,347,123"/>
-<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="262,47,285,81,280,84,258,50"/>
-<area shape="rect" id="Node000014" href="$_game_state_8hpp.html" title="Definition of the possible states of the game." alt="" coords="371,96,484,123"/>
-<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="294,46,386,87,384,92,292,51"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="73,171,144,197"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="180,125,136,162,133,158,176,121"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="168,171,217,197"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="195,123,195,155,190,155,190,123"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="331,320,388,347"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="229,118,329,146,392,169,401,186,406,204,403,242,392,278,377,308,373,306,387,276,398,241,400,204,396,188,388,173,327,151,227,123"/>
-<area shape="rect" id="Node000007" href="$_piece_generator_8hpp_source.html" title=" " alt="" coords="242,171,378,197"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="214,121,278,160,275,165,212,125"/>
-<area shape="rect" id="Node000011" href="$_window_8hpp_source.html" title=" " alt="" coords="28,245,120,272"/>
-<area shape="poly" id="edge13_Node000003_Node000011" title=" " alt="" coords="158,119,106,136,82,151,63,172,57,186,57,201,64,231,59,232,51,201,52,185,58,169,79,147,104,131,156,113"/>
-<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="318,197,337,244,355,304,350,306,331,246,313,199"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="154,245,218,272"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="290,200,222,240,219,235,287,196"/>
-<area shape="rect" id="Node000009" href="$_piece_8hpp_source.html" title=" " alt="" coords="242,245,322,272"/>
-<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="308,199,295,232,290,230,303,197"/>
-<area shape="poly" id="edge10_Node000009_Node000002" title=" " alt="" coords="247,275,126,317,124,312,245,270"/>
-<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="297,271,337,307,333,311,294,274"/>
-<area shape="rect" id="Node000010" href="$enums_8hpp_source.html" title=" " alt="" coords="221,320,306,347"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="281,273,273,305,268,304,276,272"/>
-<area shape="poly" id="edge14_Node000011_Node000002" title=" " alt="" coords="77,273,77,304,71,304,71,273"/>
-<area shape="poly" id="edge15_Node000011_Node000006" title=" " alt="" coords="121,268,316,317,315,322,120,273"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="452,171,586,197"/>
-<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="338,121,467,163,465,168,337,126"/>
+<area shape="rect" id="Node000001" title="File for main game&#39;s file class definitions." alt="" coords="456,5,601,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="333,320,471,347"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="526,49,491,179,463,273,448,294,432,311,428,307,444,290,458,271,486,177,521,48"/>
+<area shape="rect" id="Node000003" href="$_grid_8hpp.html" title="Definition of main grid&#39;s controller class." alt="" coords="268,96,338,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="472,51,354,93,352,88,470,46"/>
+<area shape="rect" id="Node000013" href="$_network_8hpp.html" title="Definition of class for network handlers." alt="" coords="524,96,619,123"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="542,47,560,81,555,83,537,50"/>
+<area shape="rect" id="Node000015" href="$_game_state_8hpp.html" title="Definition of the possible states of the game." alt="" coords="643,96,756,123"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="574,46,660,87,658,91,571,51"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="304,171,375,197"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="312,122,329,155,324,158,307,124"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="399,171,448,197"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="326,121,391,160,388,165,323,125"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,320,63,347"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="268,114,227,119,178,129,128,146,82,173,59,201,44,237,38,273,36,305,30,304,32,272,39,235,54,199,79,169,125,141,176,123,226,113,268,109"/>
+<area shape="rect" id="Node000007" href="$_piece_generator_8hpp.html" title="Class&#39; definition for piece generator handler." alt="" coords="92,171,229,197"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="280,126,200,166,198,161,277,121"/>
+<area shape="rect" id="Node000012" href="$_window_8hpp.html" title="Defines the configurations and the class of the game&#39;s window, as size and background image." alt="" coords="356,245,448,272"/>
+<area shape="poly" id="edge14_Node000003_Node000012" title=" " alt="" coords="300,124,289,158,288,178,294,196,315,220,343,236,340,241,312,224,289,199,283,179,283,157,295,122"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="128,200,93,219,61,247,47,275,39,305,34,304,42,274,57,244,90,215,125,195"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="175,245,240,272"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="171,196,193,231,189,234,167,199"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="264,245,332,272"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="186,196,262,235,259,240,183,200"/>
+<area shape="rect" id="Node000010" href="$_piece_8hpp.html" title="Definition of class for pieces handler." alt="" coords="72,245,151,272"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="154,199,131,234,126,231,150,196"/>
+<area shape="poly" id="edge11_Node000010_Node000002" title=" " alt="" coords="152,267,337,313,336,318,150,272"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="100,274,60,311,57,307,96,271"/>
+<area shape="rect" id="Node000011" href="$enums_8hpp.html" title="Simple document to store enumerated constants." alt="" coords="87,320,173,347"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="117,272,126,304,120,305,112,273"/>
+<area shape="poly" id="edge15_Node000012_Node000002" title=" " alt="" coords="405,273,405,304,399,304,399,273"/>
+<area shape="poly" id="edge16_Node000012_Node000006" title=" " alt="" coords="356,272,345,275,213,297,79,322,78,317,212,291,344,269,355,267"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="523,171,657,197"/>
+<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="577,123,586,155,580,156,572,124"/>
 </map>

@@ -1,0 +1,23 @@
+<map id="C:/Users/henri/IN204/src/Piece.hpp" name="C:/Users/henri/IN204/src/Piece.hpp">
+<area shape="rect" id="Node000001" title="Definition of class for pieces handler." alt="" coords="176,5,321,48"/>
+<area shape="rect" id="Node000002" href="$_piece_8cpp.html" title="Handles movements of pieces." alt="" coords="88,96,233,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,61,183,98,179,94,216,57"/>
+<area shape="rect" id="Node000003" href="$_piece_generator_8hpp.html" title="Class&#39; definition for piece generator handler." alt="" coords="257,96,419,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="282,57,319,94,316,98,278,61"/>
+<area shape="rect" id="Node000004" href="$_grid_8hpp.html" title="Definition of main grid&#39;s controller class." alt="" coords="176,187,321,229"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="308,152,271,188,267,184,305,148"/>
+<area shape="rect" id="Node000011" href="$_piece_generator_8cpp.html" title="Handles the randomic generation of pieces throughout the game." alt="" coords="345,187,507,229"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="371,148,408,184,404,188,367,152"/>
+<area shape="rect" id="Node000005" href="$_game_8hpp.html" title="File for main game&#39;s file class definitions." alt="" coords="92,277,237,320"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="221,243,186,279,182,275,217,239"/>
+<area shape="rect" id="Node000010" href="$_grid_8cpp.html" title="Defines all the functions concerning the game&#39;s grid, as full lines, block enemy&#39;s lines and the poss..." alt="" coords="261,277,407,320"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="281,239,316,275,312,279,277,243"/>
+<area shape="rect" id="Node000006" href="$_game_8cpp.html" title="Main game&#39;s file, handles all the steps of the game." alt="" coords="5,368,151,411"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="136,333,100,370,96,366,132,329"/>
+<area shape="rect" id="Node000007" href="$_state_manager_8hpp.html" title="Defines the class for the state management." alt="" coords="175,368,328,411"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="197,329,233,366,229,370,193,333"/>
+<area shape="rect" id="Node000008" href="$_state_manager_8cpp.html" title="Handles the current state of the game and leads the appropriated modifications." alt="" coords="88,459,241,501"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="223,424,187,460,183,456,219,420"/>
+<area shape="rect" id="Node000009" href="$main_8cpp.html" title="Main file to start and keep the game looping." alt="" coords="265,459,411,501"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="284,420,320,456,316,460,280,424"/>
+</map>
